@@ -10,26 +10,29 @@ namespace _1._1._1_RECTANGLE
             int aSide = 0;
 
             Console.WriteLine("Введите размер первой стороны");
-            
-            if (int.TryParse(Console.ReadLine(), out int x))
-            {
-                aSide = x;
-            }
+
+            CheckOfNumber(ref aSide);
 
             int bSide = 0;
 
             Console.WriteLine("Введите размер другой стороны");
 
-            if (int.TryParse(Console.ReadLine(), out int y))
-            {
-                bSide = y;
-            }
-
+            CheckOfNumber(ref bSide);
 
             CountOfRectangleArea(aSide, bSide);
         }
 
-        
+        static void CheckOfNumber(ref int targetNumber)
+        {
+            if(int.TryParse(Console.ReadLine(), out int x))
+            {
+                targetNumber = x;
+            }
+            else
+            {
+                CheckOfNumber(ref targetNumber);
+            }
+        }
         
         static void CountOfRectangleArea(int aSide, int bSide)
         {
