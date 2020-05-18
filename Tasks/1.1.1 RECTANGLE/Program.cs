@@ -20,6 +20,8 @@ namespace _1._1._1_RECTANGLE
             CheckOfNumber(ref bSide);
 
             CountOfRectangleArea(aSide, bSide);
+
+            Console.ReadLine();
         }
         //Метод для проверки введенного числа на корректность
 
