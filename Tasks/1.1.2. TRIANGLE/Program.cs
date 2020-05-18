@@ -7,7 +7,7 @@ namespace _1._1._2.TRIANGLE
     {
         static void Main(string[] args)
         {
-            int numberOfDrop;
+            int numberOfDrop = 0;
 
             if(int.TryParse(Console.ReadLine(), out int x))
             {
@@ -18,7 +18,6 @@ namespace _1._1._2.TRIANGLE
 
             for(int i = 0; i <= numberOfDrop; i++)
             {
-
             }
 
         }
