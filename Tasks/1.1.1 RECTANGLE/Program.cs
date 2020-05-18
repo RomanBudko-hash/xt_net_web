@@ -21,6 +21,7 @@ namespace _1._1._1_RECTANGLE
 
             CountOfRectangleArea(aSide, bSide);
         }
+        //Метод для проверки введенного числа на корректность
 
         static void CheckOfNumber(ref int targetNumber)
         {
@@ -33,6 +34,7 @@ namespace _1._1._1_RECTANGLE
                 CheckOfNumber(ref targetNumber);
             }
         }
+        //Метод для дальнейшей проверки числа на неотрицательность, дальнейшее решение
         
         static void CountOfRectangleArea(int aSide, int bSide)
         {
