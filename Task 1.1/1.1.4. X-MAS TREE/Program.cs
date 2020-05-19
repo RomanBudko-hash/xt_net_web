@@ -27,5 +27,9 @@ public class Test
 		    }
 			}
 		}
+		else
+		{
+			Console.WriteLine("Введено некорректное число");
+		}
 	}
 }
