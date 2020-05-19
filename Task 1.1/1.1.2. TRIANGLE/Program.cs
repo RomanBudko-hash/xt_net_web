@@ -7,6 +7,8 @@ namespace _1._1._2.TRIANGLE
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+
             int numberOfDrop = 0;
 
             //Проверка на корректность ввода
