@@ -23,7 +23,7 @@ public class Test
 		    for (int j = 0; j < i; j++)
 		    {
 		        string branch = new String('*', j);
-		        Console.WriteLine(branch.PadLeft(numberOflevelTree + 7) + "*" + branch);
+		        Console.WriteLine(branch.PadLeft(numberOflevelTree + 20) + "*" + branch);
 		    }
 			}
 		}
