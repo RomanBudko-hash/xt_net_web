@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("1.1.3. ANOTHER TRIANGLE")]
+[assembly: AssemblyTitle("1.1.2. TRIANGLE")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("1.1.3. ANOTHER TRIANGLE")]
+[assembly: AssemblyProduct("1.1.2. TRIANGLE")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("87d636fa-408e-48cb-b151-986d81ead413")]
+[assembly: Guid("aadabc4a-6bba-4f8e-bdc4-94b8166bcf0f")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
