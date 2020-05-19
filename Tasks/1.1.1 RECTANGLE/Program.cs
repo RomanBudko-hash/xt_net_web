@@ -42,7 +42,7 @@ namespace _1._1._1_RECTANGLE
         {
             if (aSide <= 0 || bSide <= 0)
             {
-                Console.WriteLine("Некорректный ввод сторон прямоугольника");
+                Console.WriteLine("Некорректный ввод сторон(-ы) прямоугольника");
             }
             else
             {
