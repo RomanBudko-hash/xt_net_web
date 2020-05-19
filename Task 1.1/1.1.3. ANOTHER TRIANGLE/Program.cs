@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _1._1._3.ANOTHER_TRIANGLE
 {
@@ -11,7 +7,9 @@ namespace _1._1._3.ANOTHER_TRIANGLE
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
+
             int numberOfDrop = 0;
+
             //Проверка на корректность ввода
             if(int.TryParse(Console.ReadLine(), out int x))
             {
@@ -21,6 +19,7 @@ namespace _1._1._3.ANOTHER_TRIANGLE
             {
                 Console.WriteLine("Введите корректное число");
             }
+
             //Рисовка треугольника
             if(numberOfDrop > 0)
             {
