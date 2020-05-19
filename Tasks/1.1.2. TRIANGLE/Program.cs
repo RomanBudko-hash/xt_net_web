@@ -9,6 +9,7 @@ namespace _1._1._2.TRIANGLE
         {
             int numberOfDrop = 0;
 
+            //Проверка на корректность ввода
             if(int.TryParse(Console.ReadLine(), out int x))
             {
                 numberOfDrop = x;
@@ -17,7 +18,7 @@ namespace _1._1._2.TRIANGLE
             {
                 Console.WriteLine("Введите корректное число");
             }
-            
+            //Рисовка треугольника
             if(numberOfDrop > 0)
             {
                 for(int i = 1; i <= numberOfDrop; i++)
