@@ -10,8 +10,8 @@ namespace _1._1._3.ANOTHER_TRIANGLE
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             int numberOfDrop = 0;
-            int secondNumber = 0;
             //Проверка на корректность ввода
             if(int.TryParse(Console.ReadLine(), out int x))
             {
