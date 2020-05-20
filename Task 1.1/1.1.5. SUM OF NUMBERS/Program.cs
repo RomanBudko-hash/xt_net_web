@@ -7,15 +7,15 @@ namespace _1._1._5.SUM_OF_NUMBERS
     {
         static void Main(string[] args)
         {
-            int [] targetNumber = new int [999];// Массив для хранения всех чисел в выборке
+            int [] targetNumber = new int [1000];// Массив для хранения всех чисел в выборке
 
-            int[] filtrNumber = new int[999]; // Массив для отфильтрованных чисел
+            int[] filtrNumber = new int[1000]; // Массив для отфильтрованных чисел
 
             int x = 0; // Переменная для удобства отсеивания
 
             int countofFiltrNumbers = 0; // Итоговая сумма всех чисел
 
-            for (int i = 1; i < targetNumber.Length; i++)// Заполнение массива натуральными числами
+            for (int i = 1; i < filtrNumber.Length; i++)// Заполнение массива натуральными числами
             {
                 targetNumber[0] = 1;
                 targetNumber[i] = i+1;
@@ -33,6 +33,8 @@ namespace _1._1._5.SUM_OF_NUMBERS
             }
             
             Console.WriteLine(countofFiltrNumbers);
+            Console.WriteLine(string.Join(" ", targetNumber));
+            Console.WriteLine(string.Join(" ", filtrNumber));
             Console.ReadLine();
         }
     }
