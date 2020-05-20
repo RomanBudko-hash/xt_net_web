@@ -33,8 +33,6 @@ namespace _1._1._5.SUM_OF_NUMBERS
             }
             
             Console.WriteLine(countofFiltrNumbers);
-            Console.WriteLine(string.Join(" ", targetNumber));
-            Console.WriteLine(string.Join(" ", filtrNumber));
             Console.ReadLine();
         }
     }
