@@ -3,24 +3,28 @@
 
 namespace _1._1._6.FONT_ADJUSTMENT
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
+            EnterAtTheConsole();
+            int enterNumber = int.Parse(Console.ReadLine());
+        }
 
-            string[] arrForTitle = new string [] { "None", "bold", "italic", "underline" };
+        public static string[] arrForTitle = new string[] { "None", "bold", "italic", "underline" };
 
-            string s = "";
+        public static string s = "";
 
+        public static void EnterAtTheConsole()
+        {
             Console.WriteLine("Параметры надписи: " + arrForTitle[0]);
             Console.WriteLine("Введите:");
-            
-            for (int i = 1; i <arrForTitle.Length; i++)
+
+            for (int i = 1; i < arrForTitle.Length; i++)
             {
                 Console.WriteLine(s.PadRight(7) + i + ":" + arrForTitle[i]);
             }
-            int enterNumber = int.Parse(Console.ReadLine());
         }
     }
 }
