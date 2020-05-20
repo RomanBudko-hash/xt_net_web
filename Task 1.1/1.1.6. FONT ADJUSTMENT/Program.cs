@@ -9,7 +9,16 @@ namespace _1._1._6.FONT_ADJUSTMENT
         {
             Console.ForegroundColor = ConsoleColor.Green;
             EnterAtTheConsole();
-            int enterNumber = int.Parse(Console.ReadLine());
+            int enterNumber = 0;
+
+            if (int.TryParse(Console.ReadLine(), out int x))
+            {
+                enterNumber = x;
+            }
+            else
+            {
+                Console.WriteLine("Введено некорректное значение");
+            }
         }
 
         public static string[] arrForTitle = new string[] { "None", "bold", "italic", "underline" };
