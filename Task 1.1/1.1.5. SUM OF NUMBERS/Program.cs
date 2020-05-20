@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace _1._1._5.SUM_OF_NUMBERS
 {
@@ -10,6 +7,16 @@ namespace _1._1._5.SUM_OF_NUMBERS
     {
         static void Main(string[] args)
         {
+            int [] targetNumber = new int [999];
+
+            for (int i = 1; i < targetNumber.Length; i++)
+            {
+                targetNumber[0] = 1;
+                targetNumber[i] = i+1;
+            }
+
+            Console.WriteLine(string.Join(" ", targetNumber));
+            Console.ReadLine();
         }
     }
 }
