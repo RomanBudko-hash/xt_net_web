@@ -43,8 +43,25 @@ namespace _1._1._7.ARRAY_PROCESSING
                 {
                     min = array[i + 1];
                 }
-                Console.WriteLine("Минимальное число = " + min);
             }
+            Console.WriteLine("Минимальное число = " + min);
+
+            bool needIteration = false; // Сортировка массива пузырьком
+            while (!needIteration)
+            {
+                needIteration = true;
+                for (int i = 1; i < array.Length; i++)
+                {
+                    if (array[i] < array[i - 1])
+                    {
+                        int temp = array[i];
+                        array[i] = array[i - 1];
+                        array[i - 1] = temp;
+                        needIteration = false;
+                    }
+                }
+            }
+            Console.WriteLine(string.Join(" ",array));
         }
     }
 }
