@@ -7,7 +7,7 @@ namespace _1._1._10._2D_ARRAY
     {
         static void Main(string[] args)
         {
-            int[,] array = new int[3,4];
+            int[,] array = new int[3,5];
 
             int sum = 0;
             
