@@ -5,6 +5,13 @@ namespace _1._2._2.DOUBLER
 {
     class Program
     {
+        static string MethodForCreateWorkingRow(string textExample)
+        {
+            char[] separators = new char[] { '_', '-', ':', ';', '.', ',', '!', '?', ' ' };
+            string[] completeTextExample = textExample.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            return string.Join("", completeTextExample).ToLower();
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Введите пример строки");
@@ -25,8 +32,12 @@ namespace _1._2._2.DOUBLER
                 {
                     Console.WriteLine("Введенная строка не соответствует требованиям");
                 }
-            }
 
+                if (MethodForCreateWorkingRow(textEnter).Contains(MethodForCreateWorkingRow(doublerFirstRow)))
+                {
+                    Console.WriteLine("Пошел нахер");
+                }
+            }
         }
     }
 }
