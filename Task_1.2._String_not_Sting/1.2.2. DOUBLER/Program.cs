@@ -13,16 +13,16 @@ namespace _1._2._2.DOUBLER
             
             string finalString = "";
 
-            foreach (char ch in textEnter) // Цикл, который при нахождении одинаковых символов удваивает этот символ
+            foreach (char item in textEnter) // Цикл, который при нахождении одинаковых символов удваивает этот символ
             {
-                if (!secondRow.Contains(ch))
+                if (!secondRow.Contains(item))
                 {
-                    finalString += ch;
+                    finalString += item;
                 }
                 else
                 {
-                    finalString += ch;
-                    finalString += ch;
+                    finalString += item;
+                    finalString += item;
                 }
             }
             Console.WriteLine(finalString);
