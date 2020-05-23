@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Linq;
 
 namespace _1._2._2.DOUBLER
 {
@@ -7,28 +7,25 @@ namespace _1._2._2.DOUBLER
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите пример строки");
+            string textEnter = "написать программу, которая";
+            
+            string secondRow = "описание";
+            
+            string finalString = "";
 
-            string textEnter = Console.ReadLine();
-
-            if (string.IsNullOrWhiteSpace(textEnter) || int.TryParse(textEnter, out int x)) // Проверка введенных значений на корректность
+            foreach (char ch in textEnter) // Цикл, который при нахождении одинаковых символов удваивает этот символ
             {
-                Console.WriteLine("Введенная строка не соответствует требованиям");
-            }
-            else
-            {
-                Console.WriteLine("Введите строку, которая должна дублировать символы первой строки");
-
-                string doublerFirstRow = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(doublerFirstRow))
+                if (!secondRow.Contains(ch))
                 {
-                    Console.WriteLine("Введенная строка не соответствует требованиям");
+                    finalString += ch;
                 }
-                char[] separators = new char[] { '_', '-', ':', ';', '.', ',', '!', '?', ' ' };
-                string[] completeTextExample = doublerFirstRow.Split(separators, StringSplitOptions.RemoveEmptyEntries); // Избавление от разделителей
-                string total = string.Join("", completeTextExample).ToLower(); // Создание строки только из букв в нижнем регистре
+                else
+                {
+                    finalString += ch;
+                    finalString += ch;
+                }
             }
+            Console.WriteLine(finalString);
         }
     }
 }
