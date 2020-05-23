@@ -7,17 +7,14 @@ namespace _1._2._1.AVERAGES
     {
         static void Main(string[] args)
         {
-            string textExample = Console.ReadLine();
+            string textExample = "Викентий хорошо отметил день рождения: покушал пиццу, посмотрел кино, пообщался со студентами в чате";
 
             char [] separators = new char [] { '_', '-', ':', ';', '.', ',', '!', '?', ' ' };
 
-            var x = textExample.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            string [] completeString = textExample.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
-            foreach (string item in x)
-            {
-                Console.WriteLine(item);
-            }
-            
+            Console.WriteLine(completeString.Length); // Количество слов
+
         }
     }
 }
