@@ -14,13 +14,13 @@ namespace _1._2._4.VALIDATOR
 
             char[] enterInCharArray = enter.ToCharArray();
 
-            for (int i = 0; i < enterInCharArray.Length - 2; i++)
-            {
-                if (enterInCharArray[i].Equals('.')
-                 || enterInCharArray[i].Equals('!')
+            for (int i = 0; i < enterInCharArray.Length - 2; i++) // Длину массива сократил на 2 т.к.
+            {                                                     // считаю что предложения в 2 символа
+                if (enterInCharArray[i].Equals('.')               // (где первый символ - пробел после точки) 
+                 || enterInCharArray[i].Equals('!')               // - это некорректное предложение.
                  || enterInCharArray[i].Equals('?'))
                 {
-                    enterInCharArray[i + 2] = char.ToUpper(enterInCharArray[i+2]);
+                    enterInCharArray[i + 2] = char.ToUpper(enterInCharArray[i + 2]);
                 }
             }
 
