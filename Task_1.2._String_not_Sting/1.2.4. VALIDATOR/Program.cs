@@ -23,7 +23,7 @@ namespace _1._2._4.VALIDATOR
                     enterInCharArray[i + 2] = char.ToUpper(enterInCharArray[i + 2]);
                 }
             }
-
+            enterInCharArray[0] = char.ToUpper(enterInCharArray[0]);
             Console.WriteLine(string.Join("", enterInCharArray));
         }
     }
