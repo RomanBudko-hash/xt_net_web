@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForTest", "xt_net_web\ForTest\ForTest.csproj", "{098ACF77-211B-429E-8CB8-A3399D9C3DD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.1.1 RECTANGLE", "xt_net_web\Task_1.1._The_Magnificent_Ten\1.1.1 RECTANGLE\1.1.1 RECTANGLE.csproj", "{656E08B4-33B5-4102-91BE-7323BD148C6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{D1E6C32A-2C50-4587-AC4E-B1BE2C0BB6F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{098ACF77-211B-429E-8CB8-A3399D9C3DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{098ACF77-211B-429E-8CB8-A3399D9C3DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{098ACF77-211B-429E-8CB8-A3399D9C3DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{098ACF77-211B-429E-8CB8-A3399D9C3DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{656E08B4-33B5-4102-91BE-7323BD148C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{656E08B4-33B5-4102-91BE-7323BD148C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{656E08B4-33B5-4102-91BE-7323BD148C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{656E08B4-33B5-4102-91BE-7323BD148C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{656E08B4-33B5-4102-91BE-7323BD148C6F} = {D1E6C32A-2C50-4587-AC4E-B1BE2C0BB6F0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7C07F5B-3D25-43B5-8527-B4DB8CA4379E}
+	EndGlobalSection
+EndGlobal
