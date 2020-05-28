@@ -13,7 +13,7 @@ namespace _2._1._1.CUSTOM_STRING
             NewStringClass myFirstString = new NewStringClass(new char [] { 'a', 'b', 'c' });
             NewStringClass mySecondString = new NewStringClass(new char[] { 'b', 'b', 'c' });
 
-
+            myFirstString.CompareTwoStrings(myFirstString, mySecondString);
         }
     }
 }
