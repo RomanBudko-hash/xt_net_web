@@ -15,9 +15,19 @@ namespace _2._1._1.CUSTOM_STRING
             this.someString = someString;
         }
 
-        //public bool CompareTwoStrings(char [] first, char [] second)
-        //{
-
-        //}
+        public void CompareTwoStrings(char [] first, char [] second)
+        {
+            for (int i = 0; i < first.Length; i++)
+            {
+                if (first[i] == second[i])
+                {
+                    Console.WriteLine(true);
+                }
+                else
+                {
+                    Console.WriteLine(false);
+                }
+            }
+        }
     }
 }
