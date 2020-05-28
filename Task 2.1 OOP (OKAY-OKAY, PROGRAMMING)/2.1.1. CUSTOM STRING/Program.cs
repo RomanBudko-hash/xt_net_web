@@ -10,6 +10,7 @@ namespace _2._1._1.CUSTOM_STRING
     {
         static void Main(string[] args)
         {
+            NewStringClass str = new NewStringClass(new char[] {'a','b','c' });
         }
     }
 }
