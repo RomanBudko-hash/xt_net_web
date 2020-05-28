@@ -8,26 +8,29 @@ namespace _2._1._1.CUSTOM_STRING
 {
     public sealed class NewStringClass
     {
-        public char[] someString;
+        private char[] someString;
 
         public NewStringClass(char [] someString)
         {
             this.someString = someString;
         }
 
-        public void CompareTwoStrings(char [] first, char [] second)
+        public bool CompareTwoStrings(char [] first, char [] second)
         {
+            bool result = false;
+
             for (int i = 0; i < first.Length; i++)
             {
-                if (first[i] == second[i])
+                if (first[i] == second[i] && first.Length == second.Length)
                 {
-                    Console.WriteLine(true);
+                    result = true;
                 }
                 else
                 {
-                    Console.WriteLine(false);
+                    result = false;
                 }
             }
+            return result;
         }
     }
 }
