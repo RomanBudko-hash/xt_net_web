@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,10 @@ namespace _2._1._1.CUSTOM_STRING
                 }
             }
             return result;
+        }
+        public static string operator +(string first, string second)
+        {
+            return first += second;
         }
     }
 }
