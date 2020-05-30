@@ -10,10 +10,11 @@ namespace _2._1._1.CUSTOM_STRING
     {
         static void Main(string[] args)
         {
-            NewStringClass myFirstString = new NewStringClass(new char [] { 'a', 'b', 'c' });
-            NewStringClass mySecondString = new NewStringClass(new char[] { 'b', 'b', 'c' });
+            NewStringClass myFirstString = new NewStringClass(new char[] { 'b', 'b', 'c' });
+            NewStringClass mySecondString = new NewStringClass(new char[] { 'a', 'b', 'c' });
 
-            myFirstString.CompareTwoStrings(myFirstString, mySecondString);
+            Console.WriteLine(myFirstString.CompareTwoStrings(mySecondString));
+            Console.WriteLine(myFirstString.CompareTwoStrings(myFirstString));
         }
     }
 }
