@@ -11,7 +11,7 @@ namespace _2._1._1.CUSTOM_STRING
 {
     public class NewStringClass
     {
-        public char[] someString;
+        private char[] someString;
 
         public NewStringClass(char[] someString) => this.someString = someString; // В моей реализации только один конструктор
 
@@ -73,5 +73,12 @@ namespace _2._1._1.CUSTOM_STRING
         {
             return new NewStringClass(oneString.someString.Concat(twoString.someString).ToArray());
         }
+        public static explicit operator char [] (NewStringClass oneString) // Преобразование в массив
+        {
+            char[] array = new char [oneString.someString.Length];
+            Array.Copy(oneString.someString, 0, array, 0, array.Length);
+            return array;
+        }
+
     }
 }
