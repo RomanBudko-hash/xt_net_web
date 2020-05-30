@@ -19,7 +19,7 @@ namespace _2._1._1.CUSTOM_STRING
         {
             return new string (someString);
         }
-        public bool CompareTwoStrings(NewStringClass anotherString) // Метод сравнения двух стрингов
+        public bool CompareTwoStrings(NewStringClass anotherString) // Метод сравнения
         {
             string two = anotherString.ToString();
             string one = ToString();
@@ -47,35 +47,31 @@ namespace _2._1._1.CUSTOM_STRING
             }
             return result;
         }
-        public bool IsContains(NewStringClass anotherString) // Метод, возвращающий true при нахождении подстроки внутри строки
+        public char this [int index] // Индексатор
         {
-            string two = anotherString.ToString();
-            string one = ToString();
-            char[] oneStringView = one.ToCharArray();
-            char[] twoStringView = two.ToCharArray();
-
-            bool result;
-            int saveControlResults = 0;
-
-            for (int i = 0; i < oneStringView.Length; i++)
+            get
             {
-                for (int j = 0; j < two.Length; j++)
-                {
-                    if (oneStringView[i] == twoStringView[j])
-                    {
-                        saveControlResults++;
-                    }
-                }
+                return someString[index];
             }
-            if (saveControlResults == two.Length)
+            set
             {
-                result = true;
+                someString[index] = value;
+            }
+        }
+        public int SearchOfString(char anyChar) // Поиск символа в строке
+        {
+            if (someString.Contains(anyChar))
+            {
+                return Array.IndexOf(someString, anyChar);
             }
             else
             {
-                result = false;
+                return -1;
             }
-            return result;
+        }
+        public static NewStringClass operator +(NewStringClass oneString, NewStringClass twoString) // Конкатенация
+        {
+            return new NewStringClass(oneString.someString.Concat(twoString.someString).ToArray());
         }
     }
 }
