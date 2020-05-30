@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace _2._1._2.CUSTOM_PAINT
 {
-    class Class1
+    abstract class Figure
     {
+
     }
 }
