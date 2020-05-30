@@ -73,12 +73,15 @@ namespace _2._1._1.CUSTOM_STRING
         {
             return new NewStringClass(oneString.someString.Concat(twoString.someString).ToArray());
         }
-        public static explicit operator char [] (NewStringClass oneString) // Преобразование в массив
+        public static explicit operator char [] (NewStringClass oneString) // Преобразование NewStringClass в массив
         {
             char[] array = new char [oneString.someString.Length];
             Array.Copy(oneString.someString, 0, array, 0, array.Length);
             return array;
         }
-
+        public static explicit operator NewStringClass(char[] arr) // Преобразование из массива в NewStringClass
+        {
+            return new NewStringClass (arr);
+        }
     }
 }

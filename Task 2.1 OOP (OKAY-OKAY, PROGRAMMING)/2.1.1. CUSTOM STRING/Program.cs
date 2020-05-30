@@ -12,9 +12,6 @@ namespace _2._1._1.CUSTOM_STRING
         {
             NewStringClass myFirstString = new NewStringClass(new char[] { 'a','b', 'c' });
             NewStringClass mySecondString = new NewStringClass(new char[] { 'a', 'b', 'a' });
-
-            string x;
-            x.Contains
         }
     }
 }
