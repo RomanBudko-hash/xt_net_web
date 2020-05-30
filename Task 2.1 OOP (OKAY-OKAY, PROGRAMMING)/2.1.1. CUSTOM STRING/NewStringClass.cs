@@ -11,14 +11,14 @@ namespace _2._1._1.CUSTOM_STRING
 {
     public class NewStringClass
     {
-        private char[] someString;
+        public char[] someString;
+
         public NewStringClass(char[] someString) => this.someString = someString; // В моей реализации только один конструктор
 
         public override string ToString() // Переопределенный ТуСтринг
         {
             return new string (someString);
         }
-
         public bool CompareTwoStrings(NewStringClass anotherString) // Метод сравнения двух стрингов
         {
             string two = anotherString.ToString();
@@ -47,14 +47,44 @@ namespace _2._1._1.CUSTOM_STRING
             }
             return result;
         }
-        public static string operator +(NewStringClass twoString)
+        public bool IsContains(NewStringClass anotherString) // Метод, возвращающий true при нахождении подстроки внутри строки
         {
-            string twoStringView = twoString.ToString();
-            return new string((this) + ;
-        }
-        public bool isContains()
-        {
+            string two = anotherString.ToString();
+            string one = ToString();
+            char[] oneStringView = one.ToCharArray();
+            char[] twoStringView = two.ToCharArray();
 
+            bool result;
+            int[] saveControlResults = new int [oneStringView.Length];
+            int sumOfchars = 0;
+
+            for (int i = 0; i < oneStringView.Length; i++)
+            {
+                for (int j = 0;  j < two.Length;  j++)
+                {
+                    if (oneStringView[i] != twoStringView[j])
+                    {
+                        saveControlResults[i] = 0;
+                    }
+                    else
+                    {
+                        saveControlResults[i] = 1;
+                    }
+                }
+            }
+            for (int i = 0; i < saveControlResults.Length; i++)
+            {
+                sumOfchars += saveControlResults[i];
+            }
+            if (sumOfchars == two.Length)
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+            return result;
         }
     }
 }
