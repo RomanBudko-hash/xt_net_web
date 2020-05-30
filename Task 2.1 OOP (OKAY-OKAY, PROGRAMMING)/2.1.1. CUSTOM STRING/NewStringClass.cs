@@ -55,28 +55,19 @@ namespace _2._1._1.CUSTOM_STRING
             char[] twoStringView = two.ToCharArray();
 
             bool result;
-            int[] saveControlResults = new int [oneStringView.Length];
-            int sumOfchars = 0;
+            int saveControlResults = 0;
 
             for (int i = 0; i < oneStringView.Length; i++)
             {
-                for (int j = 0;  j < two.Length;  j++)
+                for (int j = 0; j < two.Length; j++)
                 {
-                    if (oneStringView[i] != twoStringView[j])
+                    if (oneStringView[i] == twoStringView[j])
                     {
-                        saveControlResults[i] = 0;
-                    }
-                    else
-                    {
-                        saveControlResults[i] = 1;
+                        saveControlResults++;
                     }
                 }
             }
-            for (int i = 0; i < saveControlResults.Length; i++)
-            {
-                sumOfchars += saveControlResults[i];
-            }
-            if (sumOfchars == two.Length)
+            if (saveControlResults == two.Length)
             {
                 result = true;
             }
