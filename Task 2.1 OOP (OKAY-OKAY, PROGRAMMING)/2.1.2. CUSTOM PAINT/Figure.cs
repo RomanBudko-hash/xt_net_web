@@ -8,14 +8,16 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     abstract class Figure
     {
-        private double x; // Coordinate of point being
-        private double y;
+        public int x; // Coordinate of point being
+        public int y;
 
-        public Figure (double x, double y)
+        public Figure (int x, int y)
         {
             this.x = x;
             this.y = y;
         }
-        abstract public int MethodForFindArea(); 
+        public abstract int MethodForFindArea();
+        public abstract int MetodForFindPerimetr();
+        public abstract void ShowInfo();
     }
 }
