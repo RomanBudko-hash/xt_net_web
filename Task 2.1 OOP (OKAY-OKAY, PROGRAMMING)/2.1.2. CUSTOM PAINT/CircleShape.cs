@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2._1._2.CUSTOM_PAINT
 {
-    abstract class Figure
+    class CircleShape : Figure // Окружность
     {
 
     }
