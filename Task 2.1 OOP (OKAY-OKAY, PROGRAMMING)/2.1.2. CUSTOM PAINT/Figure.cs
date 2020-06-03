@@ -6,18 +6,21 @@ using System.Threading.Tasks;
 
 namespace _2._1._2.CUSTOM_PAINT
 {
-    abstract class Figure
+    public abstract class Figure
     {
-        public int x; // Coordinate of point being
-        public int y;
+        private int x; // Coordinates of center point being
+        private int y;
 
-        public Figure (int x, int y)
+        protected Figure (int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            if (!string.IsNullOrWhiteSpace && int.TryParse(Console.ReadLine(), out int someNumber))
+            {
+                this.x = x;
+                this.y = y;
+            }
         }
-        public abstract int MethodForFindArea();
-        public abstract int MetodForFindPerimetr();
-        public abstract void ShowInfo();
+        protected abstract int FindArea();
+        protected abstract int FindPerimetr();
+        protected abstract void ShowInfo();
     }
 }

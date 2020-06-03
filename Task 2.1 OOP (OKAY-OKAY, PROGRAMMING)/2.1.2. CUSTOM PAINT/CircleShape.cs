@@ -6,51 +6,34 @@ using System.Threading.Tasks;
 
 namespace _2._1._2.CUSTOM_PAINT
 {
-    class CircleShape : Figure // Окружность
+    abstract class CircleShape : Figure
     {
-        public int radius;
+        private int _insideRadius;
 
-        public CircleShape(int Radius) : base(0, 0)
+        protected CircleShape(int x, int y, int insideRadius) : base (x, y)
         {
-            CheckEnter = Radius;
-        }
-        public CircleShape(int x, int y, int Radius) : base(x, y)
-        {
-            CheckEnter = Radius;
-        }
-        public int CheckEnter
-        {
-            get
+            base;
+            if (!string.IsNullOrWhiteSpace && int.TryParse(Console.ReadLine(), out int someNumber))
             {
-                return radius;
-            }
-            set
-            {
-                if (int.TryParse(value, out int x) > 0)
-                {
-                    radius = x;
-                }
-                else
-                {
-                    Console.WriteLine("Uncorrect entered the radius");
-                }
+                insideRadius = _insideRadius;
             }
         }
-        public override int MethodForFindArea(int radius)
+        protected abstract int MethodForFindArea(int _insideRadius)
         {
             return radius * Math.PI * radius;
         }
-        public override int MetodForFindPerimetr(int radius)
+        protected abstract int MetodForFindPerimetr(int _insideRadius)
         {
             return 2 * radius * Math.PI;
         }
-        public void ShowInfo(int radius, int MethodForFindArea, int MetodForFindPerimetr, int x, int y)
+        protected void ShowInfo(int _insideRadius, int MethodForFindArea, int MetodForFindPerimetr, int x, int y)
         {
             Console.WriteLine("Figure Circle is created! \n" +
-                               "Radius: " + radius + "\n" +
+                               "Radius: " + _insideRadius + "\n" +
                                   "Area: " + MethodForFindArea + "\n" +
                                      "Perimetr: " + MetodForFindPerimetr + "\n" +
                                         "Points of being: " + x + y);
         }
     }
 }
+        
