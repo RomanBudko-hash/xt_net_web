@@ -8,16 +8,13 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public abstract class Figure
     {
-        private int x; // Coordinates of center point being
-        private int y;
+        public int x { get; } // Coordinates of center point being
+        public int y { get; }
 
         protected Figure (int x, int y)
         {
-            if (!string.IsNullOrWhiteSpace && int.TryParse(Console.ReadLine(), out int someNumber))
-            {
-                this.x = x;
-                this.y = y;
-            }
+            this.x = x;
+            this.y = y;
         }
         protected abstract int FindArea();
         protected abstract int FindPerimetr();
