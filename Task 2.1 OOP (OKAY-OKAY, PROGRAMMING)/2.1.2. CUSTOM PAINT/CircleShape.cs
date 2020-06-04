@@ -13,7 +13,7 @@ namespace _2._1._2.CUSTOM_PAINT
 
         private int lenghtCircleShape
         {
-            get => Perimetr;
+            get => FindToPerimetr;
         }
 
         public CircleShape(int x, int y, int insideRadius) : base(x, y) 
@@ -21,7 +21,7 @@ namespace _2._1._2.CUSTOM_PAINT
             this.insideRadius = insideRadius;
         }
 
-        public int Perimetr(int insideRadius)
+        public int FindToPerimetr(int insideRadius)
         {
             Perimetr = 2* Math.PI * insideRadius;
             return Perimetr;
