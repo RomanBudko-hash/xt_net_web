@@ -16,8 +16,7 @@ namespace _2._1._2.CUSTOM_PAINT
             this.x = x;
             this.y = y;
         }
-        protected abstract int FindArea();
-        protected abstract int FindPerimetr();
+
         protected abstract void ShowInfo();
     }
 }
