@@ -10,26 +10,21 @@ namespace _2._1._2.CUSTOM_PAINT
     public class CircleShape : Figure
     {
         public int insideRadius { get; }
-
-        private int lenghtCircleShape
-        {
-            get => FindToPerimetr;
-        }
+        public int perimetr { get; }
 
         public CircleShape(int x, int y, int insideRadius) : base(x, y) 
         {
             this.insideRadius = insideRadius;
         }
 
-        public int FindToPerimetr(int insideRadius)
+        public void FindToPerimetr(int insideRadius)
         {
-            Perimetr = 2* Math.PI * insideRadius;
-            return Perimetr;
+            perimetr = 2* Math.PI * insideRadius;
         }
 
-        public void ShowInfo()
+        public override void ShowInfo()
         {
-
+            
         }
     }
 }
