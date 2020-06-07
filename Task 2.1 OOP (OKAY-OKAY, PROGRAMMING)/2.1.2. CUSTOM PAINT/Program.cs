@@ -15,6 +15,9 @@ namespace _2._1._2.CUSTOM_PAINT
             int enterParametr2;
             int enterParametr3;
             int enterParametr4;
+            int enterParametr5;
+            int enterParametr6;
+            int userSelect;
             while (true)
             {
                 Console.WriteLine("Please select type of a figure");
@@ -25,28 +28,12 @@ namespace _2._1._2.CUSTOM_PAINT
                 Console.WriteLine("5. Rectangle");
                 Console.WriteLine("6. Line");
 
-                int.TryParse(Console.ReadLine(), out int i);
-                var firstEnter = i;
+                var firstEnter = int.TryParse(Console.ReadLine(), out int i);
+                userSelect = i;
 
-                Console.WriteLine("Please enter all parametrs");
+                Console.WriteLine("Please enter all parametrs of a figure");
 
-                var enter = int.TryParse(Console.ReadLine(), out int x);
-
-                enterParametr1 = x;
-
-                enter = int.TryParse(Console.ReadLine(), out int y);
-
-                enterParametr2 = y;
-
-                enter = int.TryParse(Console.ReadLine(), out int z);
-
-                enterParametr3 = z;
-
-                enter = int.TryParse(Console.ReadLine(), out int u);
-
-                enterParametr4 = u;
-
-                switch (firstEnter)
+                switch (userSelect)
                 {
                     case 1:
                         //new Ring(enterParametr1, enterParametr2, enterParametr3);
