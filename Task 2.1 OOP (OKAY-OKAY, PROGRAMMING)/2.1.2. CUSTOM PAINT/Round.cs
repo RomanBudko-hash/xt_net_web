@@ -14,13 +14,13 @@ namespace _2._1._2.CUSTOM_PAINT
 
             set
             {
-                if (value > 0)
+                if (int.TryParse(Console.ReadLine(), out int x) && x > 0)
                 {
                     area = x;
                 }
                 else
                 {
-                    Console.WriteLine("Введено некорректое значение");
+                    Console.WriteLine("Uncorrect enter");
                 }
             }
         }
@@ -28,6 +28,7 @@ namespace _2._1._2.CUSTOM_PAINT
         public Round(int x, int y, double insideRadius) : base(x, y, insideRadius)
         {
             this.insideRadius = insideRadius;
+            Console.WriteLine("Round is created!!!");
         }
 
         public void FindToArea()
@@ -35,8 +36,10 @@ namespace _2._1._2.CUSTOM_PAINT
             area = insideRadius * Math.PI * insideRadius;
         }
 
-        public void GetInfo()
+        void IGetInfo.GetInfo()
         {
+            FindToArea();
+            FindToPerimetr();
             Console.WriteLine("Figure Circle is created! \n" +
                                "Radius: " + insideRadius + "\n" +
                                   "Area: " + area + "\n" +

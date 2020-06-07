@@ -14,20 +14,20 @@ namespace _2._1._2.CUSTOM_PAINT
 
             set
             {
-                if (value > 0)
+                if (int.TryParse(Console.ReadLine(), out int side) && side > 0)
                 {
-                    side = x;
+                    this.side = side;
                 }
                 else
                 {
-                    Console.WriteLine("Введено некорректное значение");
+                    Console.WriteLine("Uncorrect enter");
                 }
             }
         }
 
-        private int perimetr { get; set; }
+        public int perimetr { get; set; }
 
-        private int area { get; set; }
+        public int area { get; set; }
 
         public Square(int x, int y, int side) : base(x, y)
         {
@@ -46,6 +46,9 @@ namespace _2._1._2.CUSTOM_PAINT
 
         public void GetInfo()
         {
+            FindToArea();
+            FindToPerimetr();
+
             Console.WriteLine("Figure Circle is created! \n" +
                                   "Area: " + area + "\n" +
                                      "Perimetr: " + perimetr + "\n" +

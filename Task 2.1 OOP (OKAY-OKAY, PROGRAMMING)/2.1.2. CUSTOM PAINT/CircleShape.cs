@@ -21,27 +21,17 @@ namespace _2._1._2.CUSTOM_PAINT
                 }
                 else
                 {
-                    Console.WriteLine("Введено некорректное значение");
+                    Console.WriteLine("Uncorrect enter");
                 }
             }
         }
 
-        private double perimetr
-        {
-            get => perimetr;
-
-            set
-            {
-                if (value > 0)
-                {
-                    perimetr = x;
-                }
-            }
-        }
+        public double perimetr { get; set; }
 
         public CircleShape(int x, int y, double insideRadius) : base(x, y)
         {
             this.insideRadius = insideRadius;
+            Console.WriteLine("CircleShape is created!!!");
         }
 
         public void FindToPerimetr()
@@ -51,6 +41,7 @@ namespace _2._1._2.CUSTOM_PAINT
 
         public void GetInfo()
         {
+            FindToPerimetr();
             Console.WriteLine("Figure Circle is created! \n" +
                                "Radius: " + insideRadius + "\n" +
                                      "Perimetr: " + perimetr + "\n" +
