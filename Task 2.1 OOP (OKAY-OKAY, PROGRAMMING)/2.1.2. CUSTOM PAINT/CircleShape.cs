@@ -7,25 +7,48 @@ using System.Threading.Tasks;
 
 namespace _2._1._2.CUSTOM_PAINT
 {
-    public class CircleShape : Figure
+    public class CircleShape : Figure, IGetInfo
     {
-        public int insideRadius { get; }
-        public int perimetr { get; }
+        public double insideRadius
+        {
+            get => insideRadius;
 
-        public CircleShape(int x, int y, int insideRadius) : base(x, y) 
+            set
+            {
+                if (double.TryParse(Console.ReadLine(), out double x) && x > 0)
+                {
+                    insideRadius = x;
+                }
+            }
+        }
+
+        private double perimetr
+        {
+            get => perimetr;
+
+            set
+            {
+                if (double.TryParse(Console.ReadLine(), out double x) && x > 0)
+                {
+                    perimetr = x;
+                }
+            }
+        }
+
+        public CircleShape(int x, int y, double insideRadius) : base(x, y)
         {
             this.insideRadius = insideRadius;
         }
 
         public void FindToPerimetr(int insideRadius)
         {
-            perimetr = 2* Math.PI * insideRadius;
+            perimetr = 2 * Math.PI * insideRadius;
         }
 
-        public override void ShowInfo()
+        public void GetInfo()
         {
-            
+            throw new NotImplementedException();
         }
     }
 }
-        
+
