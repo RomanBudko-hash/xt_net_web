@@ -14,26 +14,34 @@ namespace _2._1._2.CUSTOM_PAINT
 
             set
             {
-                if (double.TryParse(Console.ReadLine(), out double x) && x > 0)
+                if (value > 0)
                 {
                     area = x;
+                }
+                else
+                {
+                    Console.WriteLine("Введено некорректое значение");
                 }
             }
         }
 
-        public Round(int x, int y, int insideRadius) : base(x, y, insideRadius)
+        public Round(int x, int y, double insideRadius) : base(x, y, insideRadius)
         {
             this.insideRadius = insideRadius;
         }
 
-        public void FindToArea(int insideRadius)
+        public void FindToArea()
         {
             area = insideRadius * Math.PI * insideRadius;
         }
 
         public void GetInfo()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Figure Circle is created! \n" +
+                               "Radius: " + insideRadius + "\n" +
+                                  "Area: " + area + "\n" +
+                                        "Points of being: " + x + y);
+
         }
     }
 }

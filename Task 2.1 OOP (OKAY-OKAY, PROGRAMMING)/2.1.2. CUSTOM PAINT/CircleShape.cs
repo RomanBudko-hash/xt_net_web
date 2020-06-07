@@ -9,15 +9,19 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public class CircleShape : Figure, IGetInfo
     {
-        public double insideRadius
+        protected double insideRadius
         {
             get => insideRadius;
 
             set
             {
-                if (double.TryParse(Console.ReadLine(), out double x) && x > 0)
+                if (value > 0)
                 {
                     insideRadius = x;
+                }
+                else
+                {
+                    Console.WriteLine("Введено некорректное значение");
                 }
             }
         }
@@ -28,7 +32,7 @@ namespace _2._1._2.CUSTOM_PAINT
 
             set
             {
-                if (double.TryParse(Console.ReadLine(), out double x) && x > 0)
+                if (value > 0)
                 {
                     perimetr = x;
                 }
@@ -40,15 +44,20 @@ namespace _2._1._2.CUSTOM_PAINT
             this.insideRadius = insideRadius;
         }
 
-        public void FindToPerimetr(int insideRadius)
+        public void FindToPerimetr()
         {
             perimetr = 2 * Math.PI * insideRadius;
         }
 
         public void GetInfo()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Figure Circle is created! \n" +
+                               "Radius: " + insideRadius + "\n" +
+                                     "Perimetr: " + perimetr + "\n" +
+                                        "Points of being: " + x + y);
+
         }
     }
 }
+
 

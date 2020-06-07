@@ -47,6 +47,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Figure.cs" />
     <Compile Include="IGetInfo.cs" />
+    <Compile Include="IPerimetr.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Round.cs" />
