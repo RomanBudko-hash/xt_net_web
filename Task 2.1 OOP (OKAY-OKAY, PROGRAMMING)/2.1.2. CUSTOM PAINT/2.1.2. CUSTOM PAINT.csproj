@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CircleShape.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Figure.cs" />
     <Compile Include="IGetInfo.cs" />
     <Compile Include="IPerimetr.cs" />
