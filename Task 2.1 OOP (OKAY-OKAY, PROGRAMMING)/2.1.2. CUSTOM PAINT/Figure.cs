@@ -14,7 +14,7 @@ namespace _2._1._2.CUSTOM_PAINT
 
             set
             {
-                if (int.TryParse(Console.ReadLine(), out int x) && x > 0)
+                if (x > 0)
                 {
                     this.x = x;
                 }
@@ -31,7 +31,7 @@ namespace _2._1._2.CUSTOM_PAINT
 
             set
             {
-                if (int.TryParse(Console.ReadLine(), out int y) && y > 0)
+                if (y > 0)
                 {
                     this.y = y;
                 }
