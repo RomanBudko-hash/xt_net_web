@@ -14,9 +14,9 @@ namespace _2._1._2.CUSTOM_PAINT
 
             set
             {
-                if (x > 0)
+                if (value > 0)
                 {
-                    this.x = x;
+                    x = value;
                 }
                 else
                 {
@@ -47,6 +47,6 @@ namespace _2._1._2.CUSTOM_PAINT
             this.x = x;
             this.y = y;
         }
-        
+
     }
 }

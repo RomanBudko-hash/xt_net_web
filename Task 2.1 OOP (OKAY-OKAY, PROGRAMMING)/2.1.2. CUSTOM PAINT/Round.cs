@@ -8,15 +8,15 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public class Round : CircleShape, IGetInfo
     {
-        private double area
+        protected double insideArea
         {
-            get => area;
+            get => insideArea;
 
             set
             {
-                if (int.TryParse(Console.ReadLine(), out int x) && x > 0)
+                if (value > 0)
                 {
-                    area = x;
+                    insideArea = value;
                 }
                 else
                 {
@@ -33,18 +33,16 @@ namespace _2._1._2.CUSTOM_PAINT
 
         public void FindToArea()
         {
-            area = insideRadius * Math.PI * insideRadius;
+            insideArea = insideRadius * Math.PI * insideRadius;
         }
 
         void IGetInfo.GetInfo()
         {
             FindToArea();
-            FindToPerimetr();
             Console.WriteLine("Figure Circle is created! \n" +
-                               "Radius: " + insideRadius + "\n" +
-                                  "Area: " + area + "\n" +
+                                "Radius: " + insideRadius + "\n" +
+                                    "Area: " + insideArea + "\n" +
                                         "Points of being: " + x + y);
-
         }
     }
 }

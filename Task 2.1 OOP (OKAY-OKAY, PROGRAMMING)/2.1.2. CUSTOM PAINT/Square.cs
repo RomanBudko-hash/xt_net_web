@@ -14,9 +14,9 @@ namespace _2._1._2.CUSTOM_PAINT
 
             set
             {
-                if (int.TryParse(Console.ReadLine(), out int side) && side > 0)
+                if (value > 0)
                 {
-                    this.side = side;
+                    side = value;
                 }
                 else
                 {
@@ -24,7 +24,7 @@ namespace _2._1._2.CUSTOM_PAINT
                 }
             }
         }
-        
+
         public int perimetr { get; set; }
 
         public int area { get; set; }

@@ -19,7 +19,7 @@ namespace _2._1._2.CUSTOM_PAINT
             {
                 if (value > 0)
                 {
-                    sideA = x;
+                    sideA = value;
                 }
                 else
                 {
@@ -36,7 +36,7 @@ namespace _2._1._2.CUSTOM_PAINT
             {
                 if (value > 0)
                 {
-                    sideB = x;
+                    sideB = value;
                 }
                 else
                 {
@@ -67,9 +67,9 @@ namespace _2._1._2.CUSTOM_PAINT
             FindToArea();
             FindToPerimetr();
             Console.WriteLine("Figure Circle is created! \n" +
-                                  "Area: " + area + "\n" +
+                                "Area: " + area + "\n" +
                                   "Perimetr: " + perimetr + "\n" +
-                                        "Points of being: " + x + y);
+                                    "Points of being: " + x + y);
         }
     }
 }

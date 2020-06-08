@@ -11,9 +11,9 @@ namespace _2._1._2.CUSTOM_PAINT
     {
         static void Main(string[] args)
         {
-            
+
             int userSelect;
-            int [] paramert = new int[4];
+            int[] paramert = new int[4];
             List<object> saveResult = new List<object>();
 
             while (true)
@@ -34,29 +34,29 @@ namespace _2._1._2.CUSTOM_PAINT
                 for (int j = 0; j < 4; j++)
                 {
                     int.TryParse(Console.ReadLine(), out int x);
-                        paramert[j] = x;
+                    paramert[j] = x;
                 }
 
-                switch(userSelect)
+                switch (userSelect)
                 {
-                    //case 1:
-                        //new Ring(paramert[0], paramert[1],  paramert[2], paramert[3]);
-                        //break;
+                    case 1:
+                        new Ring(paramert[0], paramert[1], paramert[2], paramert[3]);
+                        break;
                     case 2:
-                        new CircleShape(paramert[0], paramert[1],  paramert[2]);
+                        new CircleShape(paramert[0], paramert[1], paramert[2]);
                         break;
                     case 3:
-                        new Round(paramert[0], paramert[1],  paramert[2]);
+                        new Round(paramert[0], paramert[1], paramert[2]);
                         break;
                     case 4:
-                        new Square(paramert[0], paramert[1],  paramert[2]);
+                        new Square(paramert[0], paramert[1], paramert[2]);
                         break;
                     case 5:
-                        new Rectangle(paramert[0], paramert[1],  paramert[2], paramert[3]);
+                        new Rectangle(paramert[0], paramert[1], paramert[2], paramert[3]);
                         break;
-                    //case 6:
-                      //  new Line(paramert[0], paramert[1],  paramert[2]);
-                        //break;
+                    case 6:
+                        new Line(paramert[0], paramert[1], paramert[2]);
+                        break;
                 }
 
                 saveResult.Add(userSelect);
@@ -66,6 +66,8 @@ namespace _2._1._2.CUSTOM_PAINT
                 Console.WriteLine("2. Display the figures");
                 Console.WriteLine("3. Clean all");
                 Console.WriteLine("4. Exit");
+
+
 
             }
         }
