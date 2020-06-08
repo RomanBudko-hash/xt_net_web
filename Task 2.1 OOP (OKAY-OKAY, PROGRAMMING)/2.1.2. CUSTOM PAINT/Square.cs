@@ -24,7 +24,7 @@ namespace _2._1._2.CUSTOM_PAINT
                 }
             }
         }
-
+        
         public int perimetr { get; set; }
 
         public int area { get; set; }

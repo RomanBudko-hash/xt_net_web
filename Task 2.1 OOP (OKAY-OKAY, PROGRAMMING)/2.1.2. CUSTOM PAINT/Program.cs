@@ -11,13 +11,11 @@ namespace _2._1._2.CUSTOM_PAINT
     {
         static void Main(string[] args)
         {
-            int enterParametr1;
-            int enterParametr2;
-            int enterParametr3;
-            int enterParametr4;
-            int enterParametr5;
-            int enterParametr6;
+            
             int userSelect;
+            int [] paramert = new int[4];
+            List<object> saveResult = new List<object>();
+
             while (true)
             {
                 Console.WriteLine("Please select type of a figure");
@@ -28,32 +26,40 @@ namespace _2._1._2.CUSTOM_PAINT
                 Console.WriteLine("5. Rectangle");
                 Console.WriteLine("6. Line");
 
-                var firstEnter = int.TryParse(Console.ReadLine(), out int i);
+                int.TryParse(Console.ReadLine(), out int i);
                 userSelect = i;
 
                 Console.WriteLine("Please enter all parametrs of a figure");
 
-                switch (userSelect)
+                for (int j = 0; j < 4; j++)
                 {
-                    case 1:
-                        //new Ring(enterParametr1, enterParametr2, enterParametr3);
-                        break;
+                    int.TryParse(Console.ReadLine(), out int x);
+                        paramert[j] = x;
+                }
+
+                switch(userSelect)
+                {
+                    //case 1:
+                        //new Ring(paramert[1], paramert[2],  paramert[3], paramert[4]);
+                        //break;
                     case 2:
-                        new CircleShape(enterParametr1, enterParametr2, enterParametr3);
+                        new CircleShape(paramert[1], paramert[2],  paramert[3]);
                         break;
                     case 3:
-                        new Round(enterParametr1, enterParametr2, enterParametr3);
+                        new Round(paramert[1], paramert[2],  paramert[3]);
                         break;
                     case 4:
-                        new Square(enterParametr1, enterParametr2, enterParametr3);
+                        new Square(paramert[1], paramert[2],  paramert[3]);
                         break;
                     case 5:
-                        new Rectangle(enterParametr1, enterParametr2, enterParametr3, enterParametr4);
+                        new Rectangle(paramert[1], paramert[2],  paramert[3], paramert[4]);
                         break;
-                    case 6:
-                        //new Line(enterParametr1, enterParametr2, enterParametr3);
-                        break;
+                    //case 6:
+                      //  new Line(paramert[1], paramert[2],  paramert[3]);
+                        //break;
                 }
+
+                saveResult.Add(userSelect);
 
                 Console.WriteLine("Please select the acts: ");
                 Console.WriteLine("1. Add a figure");
