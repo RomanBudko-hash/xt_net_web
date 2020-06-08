@@ -11,7 +11,7 @@ namespace _2._1._2.CUSTOM_PAINT
         protected int x
         {
             get => x;
-
+            
             set
             {
                 if (value > 0)
@@ -31,9 +31,9 @@ namespace _2._1._2.CUSTOM_PAINT
 
             set
             {
-                if (y > 0)
+                if (value > 0)
                 {
-                    this.y = y;
+                    y = value;
                 }
                 else
                 {

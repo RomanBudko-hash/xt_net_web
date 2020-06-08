@@ -17,7 +17,7 @@ namespace _2._1._2.CUSTOM_PAINT
             {
                 if (value > 0)
                 {
-                    insideRadius = x;
+                    insideRadius = value;
                 }
                 else
                 {
