@@ -61,6 +61,7 @@ namespace _2._1._2.CUSTOM_PAINT
         {
             perimetr = (sideB + sideA) * 2;
         }
+
         void IGetInfo.GetInfo()
         {
             FindToArea();
