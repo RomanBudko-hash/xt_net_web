@@ -11,6 +11,8 @@ namespace _2._1._2.CUSTOM_PAINT
         int area { get; set; }
         int perimetr { get; set; }
 
+        public new int size = 4;
+
         private int sideAOfRectangle;
         public int sideA
         {
@@ -36,10 +38,6 @@ namespace _2._1._2.CUSTOM_PAINT
                 {
                     sideBOfRectungle = value;
                 }
-                else
-                {
-                    Console.WriteLine("Uncorrect enter");
-                }
             }
         }
 
@@ -47,7 +45,6 @@ namespace _2._1._2.CUSTOM_PAINT
         {
             this.sideA = sideAOfRectangle;
             this.sideB = sideBOfRectungle;
-            Console.WriteLine("Rectangle is created!!!");
         }
 
         public void FindToArea()

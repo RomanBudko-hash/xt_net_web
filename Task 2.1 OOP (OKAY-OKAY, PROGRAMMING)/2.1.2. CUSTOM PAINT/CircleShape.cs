@@ -9,6 +9,8 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public class CircleShape : Figure, IGetInfo
     {
+        public new int size = 3;
+
         private double InsideRadius;
         public double insideRadius
         {

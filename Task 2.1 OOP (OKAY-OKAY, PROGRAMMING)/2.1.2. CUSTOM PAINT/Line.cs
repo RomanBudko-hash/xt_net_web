@@ -8,6 +8,8 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     class Line : Figure, IGetInfo
     {
+        public new int size = 3;
+
         private int Length;
         public int length
         {

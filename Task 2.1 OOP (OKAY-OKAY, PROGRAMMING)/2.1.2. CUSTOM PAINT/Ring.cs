@@ -8,6 +8,8 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public class Ring : CircleShape, IGetInfo
     {
+        public new int size = 4;
+
         private double OutsideRadius;
         public double outsideRagius
         {
@@ -28,7 +30,7 @@ namespace _2._1._2.CUSTOM_PAINT
 
         public Ring(int x, int y, double insideRadius, double outsideRadius) : base(x, y, insideRadius)
         {
-            this.OutsideRadius = outsideRadius;
+            OutsideRadius = outsideRadius;
         }
 
         public virtual void FindToOutsidePerimetr()

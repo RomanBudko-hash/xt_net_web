@@ -8,6 +8,8 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public class Round : CircleShape, IGetInfo
     {
+        public new int size = 3;
+
         private double insideAreaOfRound;
         protected double insideArea
         {
@@ -25,7 +27,6 @@ namespace _2._1._2.CUSTOM_PAINT
         public Round(int x, int y, double insideRadius) : base(x, y, insideRadius)
         {
             this.insideRadius = insideRadius;
-            Console.WriteLine("Round is created!!!");
         }
 
         public void FindToArea()
