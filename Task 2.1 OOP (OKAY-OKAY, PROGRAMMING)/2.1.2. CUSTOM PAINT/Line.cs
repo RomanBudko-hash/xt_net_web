@@ -8,6 +8,8 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     class Line : Figure, IGetInfo
     {
+        public new int size = 3;
+
         private int Length;
         public int length
         {
@@ -27,9 +29,12 @@ namespace _2._1._2.CUSTOM_PAINT
             Length = length;
         }
 
-        string IGetInfo.GetInfo => "Figure Line is created! \n" +
+        void IGetInfo.GetInfo()
+        {
+            Console.WriteLine("Figure Line is created! \n" +
                                 "Inside perimetr: " + length + "\n" +
                                     "Area: " + length + "\n" +
-                                        "Points of being: " + x + " " + y;
+                                        "Points of being: " + x + y);
+        }
     }
 }

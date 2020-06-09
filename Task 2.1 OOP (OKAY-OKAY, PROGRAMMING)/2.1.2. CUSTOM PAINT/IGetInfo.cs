@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 public interface IGetInfo
 {
-    string GetInfo { get; }
+    void GetInfo();
 }

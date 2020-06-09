@@ -8,6 +8,8 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public class Square : Figure, IGetInfo
     {
+        public new int size = 3;
+
         private int SideOfSquare;
         public int Side
         {
@@ -28,7 +30,7 @@ namespace _2._1._2.CUSTOM_PAINT
 
         public Square(int x, int y, int sideOfSquare) : base(x, y)
         {
-            SideOfSquare = sideOfSquare;
+            this.SideOfSquare = sideOfSquare;
         }
 
         public void FindToPerimeter()
@@ -41,9 +43,16 @@ namespace _2._1._2.CUSTOM_PAINT
             area = SideOfSquare * SideOfSquare;
         }
 
-            string IGetInfo.GetInfo => "Figure Circle is created! \n" +
+        public void GetInfo()
+        {
+            FindToArea();
+            FindToPerimeter();
+
+            Console.WriteLine("Figure Circle is created! \n" +
                                   "Area: " + area + "\n" +
                                      "Perimetr: " + perimeter + "\n" +
-                                        "Points of being: " + x + " " + y;
+                                        "Points of being: " + x + ""+ y);
+        }
+
     }
 }
