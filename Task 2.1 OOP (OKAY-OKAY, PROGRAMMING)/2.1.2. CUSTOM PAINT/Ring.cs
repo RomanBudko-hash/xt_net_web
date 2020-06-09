@@ -8,8 +8,6 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public class Ring : CircleShape, IGetInfo
     {
-        public new int size = 4;
-
         private double OutsideRadius;
         public double outsideRagius
         {
@@ -42,19 +40,12 @@ namespace _2._1._2.CUSTOM_PAINT
         {
             Area = Math.PI * ((OutsideRadius * OutsideRadius) - (insideRadius * insideRadius));
         }
-
-        void IGetInfo.GetInfo()
-        {
-            FindToInsidePerimetr();
-            FindToArea();
-
-            Console.WriteLine("Figure Circle is created! \n" +
+            string IGetInfo.GetInfo => "Figure Circle is created! \n" +
                                 "Outside radius: " + OutsideRadius + "\n" +
                                     "Inside radius: " + insideRadius + "\n" +
                                         "Inside perimetr: " + InsidePerimetr + "\n" +
                                             "Outside perimetr: " + OutsidePerimetr + "\n" +
                                                 "Area: " + Area + "\n" +
-                                                    "Points of being: " + x + ""+ y);
-        }
+                                                    "Points of being: " + x + " " + y;
     }
 }

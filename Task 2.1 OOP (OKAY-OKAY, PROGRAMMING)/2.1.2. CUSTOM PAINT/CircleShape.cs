@@ -9,8 +9,6 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public class CircleShape : Figure, IGetInfo
     {
-        public new int size = 3;
-
         private double InsideRadius;
         public double insideRadius
         {
@@ -36,15 +34,10 @@ namespace _2._1._2.CUSTOM_PAINT
         {
             InsidePerimetr = 2 * Math.PI * InsideRadius;
         }
-
-        public void GetInfo()
-        {
-            FindToInsidePerimetr();
-            Console.WriteLine("Figure Circle is created! \n" +
+            string IGetInfo.GetInfo => "Figure Circle is created! \n" +
                                 "Radius: " + insideRadius + "\n" +
                                    "Perimetr: " + InsidePerimetr + "\n" +
-                                       "Points of being: " + x + ""+ y);
-        }
+                                       "Points of being: " + x + " " + y;
     }
 }
 

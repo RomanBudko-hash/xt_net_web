@@ -11,8 +11,6 @@ namespace _2._1._2.CUSTOM_PAINT
         int area { get; set; }
         int perimetr { get; set; }
 
-        public new int size = 4;
-
         private int sideAOfRectangle;
         public int sideA
         {
@@ -56,15 +54,10 @@ namespace _2._1._2.CUSTOM_PAINT
         {
             perimetr = (sideBOfRectungle + sideAOfRectangle) * 2;
         }
-
-        void IGetInfo.GetInfo()
-        {
-            FindToArea();
-            FindToPerimetr();
-            Console.WriteLine($"Figure Circle is created! \n" +
+        
+            string IGetInfo.GetInfo => "Figure Circle is created! \n" +
                                 "Area: " + area + "\n" +
                                   "Perimetr: " + perimetr + "\n" +
-                                    "Points of being: " + x + "" + y);
-        }
+                                    "Points of being: " + x + " " + y;
     }
 }

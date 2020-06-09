@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public interface IGetInfo
+namespace _2._1._2.CUSTOM_PAINT
 {
-    string GetInfo { get; }
+    class ForInterfaceGrouping
+    {
+    }
 }

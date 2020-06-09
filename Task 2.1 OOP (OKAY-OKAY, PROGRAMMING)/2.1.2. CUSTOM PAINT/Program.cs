@@ -16,6 +16,8 @@ namespace _2._1._2.CUSTOM_PAINT
 
             List<Figure> saveResult = new List<Figure>();
 
+            
+
             while (true)
             {
                 Console.WriteLine("Please select the acts: ");
@@ -24,9 +26,9 @@ namespace _2._1._2.CUSTOM_PAINT
                 Console.WriteLine("3. Clean all");
                 Console.WriteLine("4. Exit");
 
-                int.TryParse(Console.ReadLine(), out int userSelect2);
+                int.TryParse(Console.ReadLine(), out int userSelect);
 
-                switch (userSelect2)
+                switch (userSelect)
                 {
                     case 1:
 
@@ -38,7 +40,7 @@ namespace _2._1._2.CUSTOM_PAINT
                         Console.WriteLine("5. Rectangle");
                         Console.WriteLine("6. Line");
 
-                        int.TryParse(Console.ReadLine(), out int userSelect);
+                        int.TryParse(Console.ReadLine(), out int userSelect2);
 
                         Console.WriteLine("Please enter all parametrs of a figure");
 
@@ -48,7 +50,7 @@ namespace _2._1._2.CUSTOM_PAINT
                             paramert[j] = x;
                         }
 
-                        switch (userSelect)
+                        switch (userSelect2)
                         {
                             case 1:
                                 saveResult.Add(new Ring(paramert[0], paramert[1], paramert[2], paramert[3]));
@@ -74,15 +76,18 @@ namespace _2._1._2.CUSTOM_PAINT
                         }
                         break;
                     case 2:
-                       // IGetInfo listOfFigures = new 
+                        IGetInfo getInfo = (IGetInfo)saveResult.Last().GetType();
                         break;
                     case 3:
-                        saveResult.RemoveRange(0, (int)saveResult.LongCount());
+                        saveResult.Clear();
                         break;
                     case 4:
+                        return;
+                    default:
                         return;
                 }
             }
         }
     }
 }
+//RemoveRange(0, (int)saveResult.LongCount());
