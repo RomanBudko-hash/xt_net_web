@@ -9,34 +9,30 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public class CircleShape : Figure, IGetInfo
     {
-        protected double insideRadius
+        private double InsideRadius;
+        public double insideRadius
         {
-            get => insideRadius;
+            get => InsideRadius;
 
             set
             {
                 if (value > 0)
                 {
-                    insideRadius = value;
-                }
-                else
-                {
-                    Console.WriteLine("Uncorrect enter");
+                    InsideRadius = value;
                 }
             }
         }
 
-        public double insidePerimetr { get; set; }
+        public double InsidePerimetr { get; set; }
 
         public CircleShape(int x, int y, double insideRadius) : base(x, y)
         {
-            this.insideRadius = insideRadius;
-            Console.WriteLine("CircleShape is created!!!");
+            InsideRadius = insideRadius;
         }
 
         public virtual void FindToInsidePerimetr()
         {
-            insidePerimetr = 2 * Math.PI * insideRadius;
+            InsidePerimetr = 2 * Math.PI * InsideRadius;
         }
 
         public void GetInfo()
@@ -44,8 +40,8 @@ namespace _2._1._2.CUSTOM_PAINT
             FindToInsidePerimetr();
             Console.WriteLine("Figure Circle is created! \n" +
                                 "Radius: " + insideRadius + "\n" +
-                                   "Perimetr: " + insidePerimetr + "\n" +
-                                       "Points of being: " + x + y);
+                                   "Perimetr: " + InsidePerimetr + "\n" +
+                                       "Points of being: " + x + ""+ y);
         }
     }
 }

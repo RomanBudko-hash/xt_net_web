@@ -8,45 +8,39 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public abstract class Figure
     {
+        private int X;
+
         protected int x
         {
-            get => x;
+            get => X;
             
             set
             {
                 if (value > 0)
                 {
-                    x = value;
-                }
-                else
-                {
-                    Console.WriteLine("Uncorrect enter");
+                    X = value;
                 }
             }
         }
+        private int Y;
 
         protected int y
         {
-            get => y;
+            get => Y;
 
             set
             {
                 if (value > 0)
                 {
-                    y = value;
-                }
-                else
-                {
-                    Console.WriteLine("Uncorrect enter");
+                    Y = value;
                 }
             }
         }
-
+        
         protected Figure(int x, int y)
         {
             this.x = x;
             this.y = y;
         }
-
     }
 }

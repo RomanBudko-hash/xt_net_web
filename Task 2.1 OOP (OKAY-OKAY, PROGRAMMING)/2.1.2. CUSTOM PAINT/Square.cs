@@ -8,51 +8,48 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public class Square : Figure, IGetInfo
     {
-        private int side
+        private int SideOfSquare;
+        public int Side
         {
-            get => side;
+            get => SideOfSquare;
 
             set
             {
                 if (value > 0)
                 {
-                    side = value;
-                }
-                else
-                {
-                    Console.WriteLine("Uncorrect enter");
+                    SideOfSquare = value;
                 }
             }
         }
 
-        public int perimetr { get; set; }
+        public int perimeter { get; set; }
 
         public int area { get; set; }
 
-        public Square(int x, int y, int side) : base(x, y)
+        public Square(int x, int y, int sideOfSquare) : base(x, y)
         {
-            this.side = side;
+            this.SideOfSquare = sideOfSquare;
         }
 
-        public void FindToPerimetr()
+        public void FindToPerimeter()
         {
-            perimetr = side * 4;
+            perimeter = SideOfSquare * 4;
         }
 
         public void FindToArea()
         {
-            area = side * side;
+            area = SideOfSquare * SideOfSquare;
         }
 
         public void GetInfo()
         {
             FindToArea();
-            FindToPerimetr();
+            FindToPerimeter();
 
             Console.WriteLine("Figure Circle is created! \n" +
                                   "Area: " + area + "\n" +
-                                     "Perimetr: " + perimetr + "\n" +
-                                        "Points of being: " + x + y);
+                                     "Perimetr: " + perimeter + "\n" +
+                                        "Points of being: " + x + ""+ y);
         }
 
     }

@@ -11,11 +11,10 @@ namespace _2._1._2.CUSTOM_PAINT
     {
         static void Main(string[] args)
         {
-
-            int userSelect;
+            
             int[] paramert = new int[4];
-            List<object> saveResult = new List<object>();
-
+            List<IGetInfo> saveResult = new List<IGetInfo>();
+            
             while (true)
             {
                 Console.WriteLine("Please select type of a figure");
@@ -26,8 +25,7 @@ namespace _2._1._2.CUSTOM_PAINT
                 Console.WriteLine("5. Rectangle");
                 Console.WriteLine("6. Line");
 
-                int.TryParse(Console.ReadLine(), out int i);
-                userSelect = i;
+                int.TryParse(Console.ReadLine(), out int userSelect);
 
                 Console.WriteLine("Please enter all parametrs of a figure");
 
@@ -59,7 +57,6 @@ namespace _2._1._2.CUSTOM_PAINT
                         break;
                 }
 
-                saveResult.Add(userSelect);
 
                 Console.WriteLine("Please select the acts: ");
                 Console.WriteLine("1. Add a figure");

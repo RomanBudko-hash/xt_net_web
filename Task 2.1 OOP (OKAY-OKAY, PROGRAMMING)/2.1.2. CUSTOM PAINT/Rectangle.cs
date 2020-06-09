@@ -11,32 +11,30 @@ namespace _2._1._2.CUSTOM_PAINT
         int area { get; set; }
         int perimetr { get; set; }
 
-        private int sideA
+        private int sideAOfRectangle;
+        public int sideA
         {
-            get => sideA;
+            get => sideAOfRectangle;
 
             set
             {
                 if (value > 0)
                 {
-                    sideA = value;
-                }
-                else
-                {
-                    Console.WriteLine("Uncorrect enter");
+                    sideAOfRectangle = value;
                 }
             }
         }
 
-        private int sideB
+        private int sideBOfRectungle;
+        public int sideB
         {
-            get => sideB;
+            get => sideBOfRectungle;
 
             set
             {
                 if (value > 0)
                 {
-                    sideB = value;
+                    sideBOfRectungle = value;
                 }
                 else
                 {
@@ -47,29 +45,29 @@ namespace _2._1._2.CUSTOM_PAINT
 
         public Rectangle(int x, int y, int sideA, int sideB) : base(x, y)
         {
-            this.sideA = sideA;
-            this.sideB = sideB;
+            this.sideA = sideAOfRectangle;
+            this.sideB = sideBOfRectungle;
             Console.WriteLine("Rectangle is created!!!");
         }
 
         public void FindToArea()
         {
-            area = sideA * sideB;
+            area = sideAOfRectangle * sideBOfRectungle;
         }
 
         public void FindToPerimetr()
         {
-            perimetr = (sideB + sideA) * 2;
+            perimetr = (sideBOfRectungle + sideAOfRectangle) * 2;
         }
 
         void IGetInfo.GetInfo()
         {
             FindToArea();
             FindToPerimetr();
-            Console.WriteLine("Figure Circle is created! \n" +
+            Console.WriteLine($"Figure Circle is created! \n" +
                                 "Area: " + area + "\n" +
                                   "Perimetr: " + perimetr + "\n" +
-                                    "Points of being: " + x + y);
+                                    "Points of being: " + x + "" + y);
         }
     }
 }

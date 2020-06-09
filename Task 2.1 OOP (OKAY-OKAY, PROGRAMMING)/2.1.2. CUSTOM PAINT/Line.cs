@@ -8,22 +8,23 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     class Line : Figure, IGetInfo
     {
-        private int length
+        private int Length;
+        public int length
         {
-            get => length;
+            get => Length;
 
             set
             {
                 if (value > 0)
                 {
-                    length = value;
+                    Length = value;
                 }
             }
         }
 
         public Line(int x, int y, int length) : base(x, y)
         {
-            this.length = length;
+            Length = length;
         }
 
         void IGetInfo.GetInfo()
