@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="CircleShape.cs" />
     <Compile Include="Figure.cs" />
-    <Compile Include="IGetInfo.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

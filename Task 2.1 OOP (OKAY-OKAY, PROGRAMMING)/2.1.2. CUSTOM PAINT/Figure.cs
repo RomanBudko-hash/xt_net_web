@@ -13,7 +13,7 @@ namespace _2._1._2.CUSTOM_PAINT
         protected int x
         {
             get => X;
-            
+
             set
             {
                 if (value > 0)
@@ -36,7 +36,7 @@ namespace _2._1._2.CUSTOM_PAINT
                 }
             }
         }
-        
+
         protected Figure(int x, int y)
         {
             this.x = x;
