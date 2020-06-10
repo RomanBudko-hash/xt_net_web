@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2._1._2.CUSTOM_PAINT
 {
-    public class Ring : CircleShape, IGetInfo
+    public class Ring : CircleShape
     {
         private double OutsideRadius;
         public double outsideRagius
@@ -41,18 +41,18 @@ namespace _2._1._2.CUSTOM_PAINT
             Area = Math.PI * ((OutsideRadius * OutsideRadius) - (insideRadius * insideRadius));
         }
 
-        void IGetInfo.GetInfo()
+        public override string ToString()
         {
             FindToInsidePerimetr();
             FindToArea();
 
-            Console.WriteLine("Figure Circle is created! \n" +
-                                "Outside radius: " + OutsideRadius + "\n" +
-                                    "Inside radius: " + insideRadius + "\n" +
-                                        "Inside perimetr: " + InsidePerimetr + "\n" +
-                                            "Outside perimetr: " + OutsidePerimetr + "\n" +
-                                                "Area: " + Area + "\n" +
-                                                    "Points of being: " + x + " " + y);
+            return "Figure Ring is created! \n" +
+                        "Outside radius: " + OutsideRadius + "\n" +
+                            "Inside radius: " + insideRadius + "\n" +
+                                "Inside perimetr: " + InsidePerimetr + "\n" +
+                                    "Outside perimetr: " + OutsidePerimetr + "\n" +
+                                        "Area: " + Area + "\n" +
+                                            "Points of being: " + x + " " + y;
         }
     }
 }

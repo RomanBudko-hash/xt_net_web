@@ -74,7 +74,10 @@ namespace _2._1._2.CUSTOM_PAINT
                         }
                         break;
                     case 2:
-                        saveResult.ToString();
+                        for (int i = 0; i < saveResult.Count - 1; i++)
+                        {
+                            Console.WriteLine(saveResult[i].ToString());
+                        }
                         break;
                     case 3:
                         saveResult.Clear();

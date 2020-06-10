@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2._1._2.CUSTOM_PAINT
 {
-    class Line : Figure, IGetInfo
+    class Line : Figure
     {
         private int Length;
         public int length
@@ -27,12 +27,12 @@ namespace _2._1._2.CUSTOM_PAINT
             Length = length;
         }
 
-        void IGetInfo.GetInfo()
+        public override string ToString()
         {
-            Console.WriteLine("Figure Line is created! \n" +
-                                "Inside perimetr: " + length + "\n" +
-                                    "Area: " + length + "\n" +
-                                        "Points of being: " + x + " " + y);
+            return "Figure Line is created! \n" +
+                        "Inside perimetr: " + length + "\n" +
+                            "Area: " + length + "\n" +
+                                "Points of being: " + x + " " + y;
         }
     }
 }

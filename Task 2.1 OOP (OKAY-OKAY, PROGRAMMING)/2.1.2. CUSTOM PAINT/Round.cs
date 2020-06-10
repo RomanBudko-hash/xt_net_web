@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2._1._2.CUSTOM_PAINT
 {
-    public class Round : CircleShape, IGetInfo
+    public class Round : CircleShape
     {
         private double insideAreaOfRound;
         protected double insideArea
@@ -32,13 +32,14 @@ namespace _2._1._2.CUSTOM_PAINT
             insideAreaOfRound = insideRadius * Math.PI * insideRadius;
         }
 
-        void IGetInfo.GetInfo()
+        public override string ToString()
         {
             FindToArea();
-            Console.WriteLine("Figure Circle is created! \n" +
-                                "Radius: " + insideRadius + "\n" +
-                                    "Area: " + insideAreaOfRound + "\n" +
-                                        "Points of being: " + x + " " + y);
+
+            return "Figure Round is created! \n" +
+                        "Radius: " + insideRadius + "\n" +
+                            "Area: " + insideAreaOfRound + "\n" +
+                                "Points of being: " + x + " " + y;
         }
     }
 }

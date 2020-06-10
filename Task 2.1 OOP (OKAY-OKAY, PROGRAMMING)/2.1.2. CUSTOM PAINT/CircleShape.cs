@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _2._1._2.CUSTOM_PAINT
 {
-    public class CircleShape : Figure, IGetInfo
+    public class CircleShape : Figure
     {
         private double InsideRadius;
         public double insideRadius
@@ -35,13 +35,13 @@ namespace _2._1._2.CUSTOM_PAINT
             InsidePerimetr = 2 * Math.PI * InsideRadius;
         }
 
-        public void GetInfo()
+        public override string ToString()
         {
             FindToInsidePerimetr();
-            Console.WriteLine("Figure Circle is created! \n" +
-                                "Radius: " + insideRadius + "\n" +
-                                   "Perimetr: " + InsidePerimetr + "\n" +
-                                       "Points of being: " + x + " " + y);
+            return "Figure Circle is created! \n" +
+                        "Radius: " + insideRadius + "\n" +
+                            "Perimetr: " + InsidePerimetr + "\n" +
+                                "Points of being: " + x + " " + y;
         }
     }
 }

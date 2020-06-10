@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2._1._2.CUSTOM_PAINT
 {
-    public class Square : Figure, IGetInfo
+    public class Square : Figure
     {
         private int SideOfSquare;
         public int Side
@@ -41,16 +41,15 @@ namespace _2._1._2.CUSTOM_PAINT
             area = SideOfSquare * SideOfSquare;
         }
 
-        public void GetInfo()
+        public override string ToString()
         {
             FindToArea();
             FindToPerimeter();
 
-            Console.WriteLine("Figure Circle is created! \n" +
-                                  "Area: " + area + "\n" +
-                                     "Perimetr: " + perimeter + "\n" +
-                                        "Points of being: " + x + " " + y);
+            return "Figure Square is created! \n" +
+                        "Area: " + area + "\n" +
+                            "Perimetr: " + perimeter + "\n" +
+                                "Points of being: " + x + " " + y;
         }
-
     }
 }

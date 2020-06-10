@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2._1._2.CUSTOM_PAINT
 {
-    public class Rectangle : Figure, IGetInfo
+    public class Rectangle : Figure
     {
         int area { get; set; }
         int perimetr { get; set; }
@@ -55,14 +55,14 @@ namespace _2._1._2.CUSTOM_PAINT
             perimetr = (sideBOfRectungle + sideAOfRectangle) * 2;
         }
 
-        void IGetInfo.GetInfo()
+        public override string ToString()
         {
             FindToArea();
             FindToPerimetr();
-            Console.WriteLine($"Figure Circle is created! \n" +
-                                "Area: " + area + "\n" +
-                                  "Perimetr: " + perimetr + "\n" +
-                                    "Points of being: " + x + " " + y);
+            return "Figure Rectangle is created! \n" +
+                        "Area: " + area + "\n" +
+                            "Perimetr: " + perimetr + "\n" +
+                                "Points of being: " + x + " " + y;
         }
     }
 }
