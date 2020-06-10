@@ -13,24 +13,25 @@ namespace _2._1._1.CUSTOM_STRING
     {
         private char[] someString;
 
-        public NewStringClass(char[] someString) => this.someString = someString; // В моей реализации только один конструктор
+        public NewStringClass(char[] someString) => this.someString = someString;
 
-        public override string ToString() // Переопределенный ТуСтринг
+        public override string ToString()
         {
-            return new string (someString);
+            return new string(someString);
         }
-        public bool CompareTwoStrings(NewStringClass anotherString) // Метод сравнения
+
+        public bool CompareTwoStrings(NewStringClass anotherString)
         {
-            string two = anotherString.ToString();
-            string one = ToString();
-            char[] oneStringView = one.ToCharArray();
-            char[] twoStringView = two.ToCharArray();
+            char[] oneStringView = ToString().ToCharArray();
+
+            char[] twoStringView = anotherString.ToString().ToCharArray();
+
             bool result = false;
 
-            if (one.Length == two.Length)
+            if (oneStringView.Length == twoStringView.Length)
             {
-                for (int i = 0; i < one.Length; i++)
-                { 
+                for (int i = 0; i < oneStringView.Length; i++)
+                {
                     if (oneStringView[i] == twoStringView[i])
                     {
                         result = true;
@@ -47,7 +48,8 @@ namespace _2._1._1.CUSTOM_STRING
             }
             return result;
         }
-        public char this [int index] // Индексатор
+
+        public char this[int index]
         {
             get
             {
@@ -58,7 +60,8 @@ namespace _2._1._1.CUSTOM_STRING
                 someString[index] = value;
             }
         }
-        public int SearchOfString(char anyChar) // Поиск символа в строке
+
+        public int SearchOfString(char anyChar)
         {
             if (someString.Contains(anyChar))
             {
@@ -69,19 +72,24 @@ namespace _2._1._1.CUSTOM_STRING
                 return -1;
             }
         }
-        public static NewStringClass operator +(NewStringClass oneString, NewStringClass twoString) // Конкатенация
+
+        public static NewStringClass operator +(NewStringClass oneString, NewStringClass twoString)
         {
             return new NewStringClass(oneString.someString.Concat(twoString.someString).ToArray());
         }
-        public static explicit operator char [] (NewStringClass oneString) // Преобразование NewStringClass в массив
+
+        public static explicit operator char[](NewStringClass oneString)
         {
-            char[] array = new char [oneString.someString.Length];
+            char[] array = new char[oneString.someString.Length];
             Array.Copy(oneString.someString, 0, array, 0, array.Length);
             return array;
         }
-        public static explicit operator NewStringClass(char[] arr) // Преобразование из массива в NewStringClass
+
+        public static explicit operator NewStringClass(char[] arr)
         {
-            return new NewStringClass (arr);
+            return new NewStringClass(arr);
         }
+
+
     }
 }
