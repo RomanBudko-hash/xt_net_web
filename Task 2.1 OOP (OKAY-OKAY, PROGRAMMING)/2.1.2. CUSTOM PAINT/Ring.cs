@@ -49,7 +49,7 @@ namespace _2._1._2.CUSTOM_PAINT
             return "Figure Ring is created! \n" +
                         "Outside radius: " + OutsideRadius + "\n" +
                             "Inside radius: " + insideRadius + "\n" +
-                                "Inside perimetr: " + InsidePerimetr + "\n" +
+                                "Inside perimetr: " + InsidePerimeter + "\n" +
                                     "Outside perimetr: " + OutsidePerimetr + "\n" +
                                         "Area: " + Area + "\n" +
                                             "Points of being: " + x + " " + y;

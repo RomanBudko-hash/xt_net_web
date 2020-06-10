@@ -12,7 +12,7 @@ namespace _2._1._2.CUSTOM_PAINT
     {
         static void Main(string[] args)
         {
-            int[] parameter = new int[4];
+            int[] parameter = new int[5];
 
             List<Figure> saveResult = new List<Figure>();
 
@@ -37,14 +37,28 @@ namespace _2._1._2.CUSTOM_PAINT
                         Console.WriteLine("4. Square");
                         Console.WriteLine("5. Rectangle");
                         Console.WriteLine("6. Line");
+                        Console.WriteLine("7. Triangle");
 
                         int.TryParse(Console.ReadLine(), out int userSelect2);
 
-                        Console.WriteLine("Please enter all parametrs of a figure (x, y and other parameters)");
+                        Console.WriteLine("Please enter all parametrs of a figure (x, y)");
+                        Console.WriteLine("For ring, except coordinate points please write two parameters: " +
+                            "inside radius and outside radius \n" +
+                            "For circleshape, except coordinate points please write one parameter: inside radius \n" +
+                            "For round, except coordinate points please write one parameter: inside radius \n" +
+                            "For square, except coordinate points please write one parameter: side \n" +
+                            "For rectangle, except coordinate points please write two parameters: side A and side B \n" +
+                            "For line, except coordinate points please write one parameter: length of line \n" +
+                            "For triangle, except coordinate points please write three parameters: the length of each side \n");
 
-                        for (int j = 0; j < 4; j++)
+                        for (int j = 0; j < 5; j++)
                         {
                             int.TryParse(Console.ReadLine(), out int x);
+
+                            if (x <= 0 || string.IsNullOrWhiteSpace(x.ToString()))
+                            {
+                                userSelect2 = 8;
+                            }
                             parameter[j] = x;
                         }
 
@@ -68,13 +82,16 @@ namespace _2._1._2.CUSTOM_PAINT
                             case 6:
                                 saveResult.Add(new Line(parameter[0], parameter[1], parameter[2]));
                                 break;
+                            case 7:
+                                saveResult.Add(new Triangle(parameter[0], parameter[1], parameter[2], parameter[3], parameter[4]));
+                                break;
                             default:
                                 Console.WriteLine("This figure is have't in the Task");
                                 break;
                         }
                         break;
                     case 2:
-                        for (int i = 0; i < saveResult.Count - 1; i++)
+                        for (int i = 0; i < saveResult.Count; i++)
                         {
                             Console.WriteLine(saveResult[i].ToString());
                         }

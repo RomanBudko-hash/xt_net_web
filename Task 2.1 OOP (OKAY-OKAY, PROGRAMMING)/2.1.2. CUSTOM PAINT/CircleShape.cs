@@ -23,7 +23,7 @@ namespace _2._1._2.CUSTOM_PAINT
             }
         }
 
-        public double InsidePerimetr { get; set; }
+        public double InsidePerimeter { get; set; }
 
         public CircleShape(int x, int y, double insideRadius) : base(x, y)
         {
@@ -32,7 +32,7 @@ namespace _2._1._2.CUSTOM_PAINT
 
         public virtual void FindToInsidePerimetr()
         {
-            InsidePerimetr = 2 * Math.PI * InsideRadius;
+            InsidePerimeter = 2 * Math.PI * InsideRadius;
         }
 
         public override string ToString()
@@ -40,7 +40,7 @@ namespace _2._1._2.CUSTOM_PAINT
             FindToInsidePerimetr();
             return "Figure Circle is created! \n" +
                         "Radius: " + insideRadius + "\n" +
-                            "Perimetr: " + InsidePerimetr + "\n" +
+                            "Perimetr: " + InsidePerimeter + "\n" +
                                 "Points of being: " + x + " " + y;
         }
     }

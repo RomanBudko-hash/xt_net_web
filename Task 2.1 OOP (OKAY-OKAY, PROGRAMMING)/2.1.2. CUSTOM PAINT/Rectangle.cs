@@ -25,34 +25,34 @@ namespace _2._1._2.CUSTOM_PAINT
             }
         }
 
-        private int sideBOfRectungle;
+        private int sideBOfRectangle;
         public int sideB
         {
-            get => sideBOfRectungle;
+            get => sideBOfRectangle;
 
             set
             {
                 if (value > 0)
                 {
-                    sideBOfRectungle = value;
+                    sideBOfRectangle = value;
                 }
             }
         }
 
-        public Rectangle(int x, int y, int sideA, int sideB) : base(x, y)
+        public Rectangle(int x, int y, int sideAOfRectangle, int sideBOfRectungle) : base(x, y)
         {
-            this.sideA = sideAOfRectangle;
-            this.sideB = sideBOfRectungle;
+            sideA = sideAOfRectangle;
+            sideB = sideBOfRectungle;
         }
 
         public void FindToArea()
         {
-            area = sideAOfRectangle * sideBOfRectungle;
+            area = sideA * sideB;
         }
 
         public void FindToPerimetr()
         {
-            perimetr = (sideBOfRectungle + sideAOfRectangle) * 2;
+            perimetr = (sideB + sideA) * 2;
         }
 
         public override string ToString()
