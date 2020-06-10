@@ -8,8 +8,6 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public class Square : Figure, IGetInfo
     {
-        public new int size = 3;
-
         private int SideOfSquare;
         public int Side
         {
@@ -51,7 +49,7 @@ namespace _2._1._2.CUSTOM_PAINT
             Console.WriteLine("Figure Circle is created! \n" +
                                   "Area: " + area + "\n" +
                                      "Perimetr: " + perimeter + "\n" +
-                                        "Points of being: " + x + ""+ y);
+                                        "Points of being: " + x + " " + y);
         }
 
     }

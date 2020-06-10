@@ -12,7 +12,7 @@ namespace _2._1._2.CUSTOM_PAINT
     {
         static void Main(string[] args)
         {
-            int[] paramert = new int[4];
+            int[] parameter = new int[4];
 
             List<Figure> saveResult = new List<Figure>();
 
@@ -24,9 +24,9 @@ namespace _2._1._2.CUSTOM_PAINT
                 Console.WriteLine("3. Clean all");
                 Console.WriteLine("4. Exit");
 
-                int.TryParse(Console.ReadLine(), out int userSelect2);
+                int.TryParse(Console.ReadLine(), out int userSelect);
 
-                switch (userSelect2)
+                switch (userSelect)
                 {
                     case 1:
 
@@ -38,35 +38,35 @@ namespace _2._1._2.CUSTOM_PAINT
                         Console.WriteLine("5. Rectangle");
                         Console.WriteLine("6. Line");
 
-                        int.TryParse(Console.ReadLine(), out int userSelect);
+                        int.TryParse(Console.ReadLine(), out int userSelect2);
 
-                        Console.WriteLine("Please enter all parametrs of a figure");
+                        Console.WriteLine("Please enter all parametrs of a figure (x, y and other parameters)");
 
                         for (int j = 0; j < 4; j++)
                         {
                             int.TryParse(Console.ReadLine(), out int x);
-                            paramert[j] = x;
+                            parameter[j] = x;
                         }
 
-                        switch (userSelect)
+                        switch (userSelect2)
                         {
                             case 1:
-                                saveResult.Add(new Ring(paramert[0], paramert[1], paramert[2], paramert[3]));
+                                saveResult.Add(new Ring(parameter[0], parameter[1], parameter[2], parameter[3]));
                                 break;
                             case 2:
-                                saveResult.Add(new CircleShape(paramert[0], paramert[1], paramert[2]));
+                                saveResult.Add(new CircleShape(parameter[0], parameter[1], parameter[2]));
                                 break;
                             case 3:
-                                saveResult.Add(new Round(paramert[0], paramert[1], paramert[2]));
+                                saveResult.Add(new Round(parameter[0], parameter[1], parameter[2]));
                                 break;
                             case 4:
-                                saveResult.Add(new Square(paramert[0], paramert[1], paramert[2]));
+                                saveResult.Add(new Square(parameter[0], parameter[1], parameter[2]));
                                 break;
                             case 5:
-                                saveResult.Add(new Rectangle(paramert[0], paramert[1], paramert[2], paramert[3]));
+                                saveResult.Add(new Rectangle(parameter[0], parameter[1], parameter[2], parameter[3]));
                                 break;
                             case 6:
-                                saveResult.Add(new Line(paramert[0], paramert[1], paramert[2]));
+                                saveResult.Add(new Line(parameter[0], parameter[1], parameter[2]));
                                 break;
                             default:
                                 Console.WriteLine("This figure is have't in the Task");
@@ -74,10 +74,10 @@ namespace _2._1._2.CUSTOM_PAINT
                         }
                         break;
                     case 2:
-                       // IGetInfo listOfFigures = new 
+                        saveResult.ToString();
                         break;
                     case 3:
-                        saveResult.RemoveRange(0, (int)saveResult.LongCount());
+                        saveResult.Clear();
                         break;
                     case 4:
                         return;

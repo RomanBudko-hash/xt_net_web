@@ -8,8 +8,6 @@ namespace _2._1._2.CUSTOM_PAINT
 {
     public abstract class Figure
     {
-        protected int size;
-
         private int X;
 
         protected int x
