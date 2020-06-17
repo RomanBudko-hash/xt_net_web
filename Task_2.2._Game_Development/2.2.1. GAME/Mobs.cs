@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace _2._2._1.GAME
 {
-    public class Player : Persons
+    public class Mobs : Persons
     {
-        public Player(int Speed, int PointOfBeingX, int PointOfBeingY) 
+        private readonly int Damage = 25;
+
+        public Mobs(int Speed, int PointOfBeingX, int PointOfBeingY)
         : base(Speed, PointOfBeingX, PointOfBeingY) { }
 
-        public int GetHealth()
+        public int DamageOfPlayer(Player player)
         {
-            return health += 25;
+            return player.health - Damage;
         }
     }
 }

@@ -8,46 +8,35 @@ namespace _2._2._1.GAME
 {
     public abstract class Persons
     {
-        public int HealthOfSomethingAlive { get; set; } = 100;
+        public int PointOfBeingX { get; set; }
 
-        private int SpeedOfSomethingAlive;
+        public int PointOfBeingY { get; set; }
 
-        public int Speed
+        public readonly int SpeedOfSomebodyAlive;
+
+        private int Health = 100;
+
+        public int health
         {
-            get => SpeedOfSomethingAlive;
+            get => Health;
 
             set
             {
-                if (Speed > 0 && Speed <= 100)
+                if (Health <= 100)
                 {
-                    SpeedOfSomethingAlive = Speed;
+                    Health = health;
                 }
             }
         }
 
-        private int DamageOfSomethingAlive;
-
-        public int Damage
+        public Persons(int Speed, int PointOfBeingX, int PointOfBeingY)
         {
-            get => DamageOfSomethingAlive;
-
-            set
+            if (Speed > 0 && Speed <= 5)
             {
-                if (Damage > 0 && Damage <= 50)
-                {
-                    DamageOfSomethingAlive = Damage;
-                }
+                SpeedOfSomebodyAlive = Speed;
             }
+            this.PointOfBeingX = PointOfBeingX;
+            this.PointOfBeingY = PointOfBeingY;
         }
-
-        public Persons(int Damage, int Speed)
-        {
-            DamageOfSomethingAlive = Damage;
-            SpeedOfSomethingAlive = Speed;
-        }
-
-        public abstract int ToGiveDamage();
-
-        public abstract int GetHealth();
     }
 }
