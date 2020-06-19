@@ -1,21 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2._2._1.GAME
+﻿namespace _2._2._1.GAME
 {
-    public class Mobs : Persons
+    public class Mobs : EnitiesOnTheField
     {
-        private readonly int Damage = 25;
+        private readonly int _damage = 25;
 
-        public Mobs(int Speed, int PointOfBeingX, int PointOfBeingY)
-        : base(Speed, PointOfBeingX, PointOfBeingY) { }
+        public Mobs(int PointOfBeingX, int PointOfBeingY)
+        : base(PointOfBeingX, PointOfBeingY) { }
 
-        public int DamageOfPlayer(Player player)
-        {
-            return player.health - Damage;
-        }
+        public int DamageOfPlayer(Player player) => player.Health - _damage; // урон может получить только игрок
     }
 }

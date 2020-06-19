@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2._2._1.GAME
+﻿namespace _2._2._1.GAME
 {
-    public class Player : Persons
+    public class Player : EnitiesOnTheField
     {
-        public Player(int Speed, int PointOfBeingX, int PointOfBeingY) 
-        : base(Speed, PointOfBeingX, PointOfBeingY) { }
+        public Player(int PointOfBeingX, int PointOfBeingY)
+        : base(PointOfBeingX, PointOfBeingY) { }
 
-        public int GetHealth()
-        {
-            return health += 25;
-        }
+        public int GetHealth() => this.Health += 25;
     }
 }
