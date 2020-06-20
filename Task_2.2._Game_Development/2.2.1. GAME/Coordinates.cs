@@ -1,6 +1,6 @@
 ﻿namespace _2._2._1.GAME
 {
-    public abstract class EnitiesOnTheField
+    public abstract class Coordinates
     {
         private int _pointOfBeingX;
 
@@ -40,22 +40,7 @@
             }
         }
 
-        private int _health = 100;
-
-        public int Health
-        {
-            get => _health;
-
-            set
-            {
-                if (value <= 100)
-                {
-                    _health = value;
-                }
-            }
-        }
-
-        protected EnitiesOnTheField(int PointOfBeingX, int PointOfBeingY)
+        protected Coordinates(int PointOfBeingX, int PointOfBeingY)
         {
             this.PointOfBeingX = PointOfBeingX;
             this.PointOfBeingY = PointOfBeingY;

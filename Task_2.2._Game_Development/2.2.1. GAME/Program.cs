@@ -4,7 +4,7 @@ using System;
 
 namespace _2._2._1.GAME
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
@@ -16,11 +16,16 @@ namespace _2._2._1.GAME
 
             Mobs mob = new Mobs(11, 12);
 
-            Bonus cherry = new Bonus(RandForMobs.Next(Map.Width), RandForMobs.Next(Map.Height)); // вишенка появляется в рандомном месте
+            Rock rock = new Rock(20, 15);
+
+            Bonus cherry = new Bonus(RandForMobs.Next(Map.Width),
+                                     RandForMobs.Next(Map.Height)); // Вишенка появляется в рандомном месте
 
             ConsoleKeyInfo info;
 
-            while (true)
+            bool StopGame = false;
+
+            while (!StopGame)
             {
                 if (Console.KeyAvailable)
                 {
@@ -83,6 +88,29 @@ namespace _2._2._1.GAME
                             mob.PointOfBeingY--;
                             break;
                     }
+
+                    if (pl.Health == 0)
+                    {
+                        StopGame = true;
+                    }
+
+                    if (pl.PointOfBeingX == rock.PointOfBeingX
+                     && pl.PointOfBeingY == rock.PointOfBeingY) // Встреча с камнем
+                    {
+                        rock.GetAround(pl);
+                    }
+
+                    else if (mo.PointOfBeingX == rock.PointOfBeingX
+                          && mo.PointOfBeingY == rock.PointOfBeingY)
+                         {
+                        rock.GetAround(mo);
+                         }
+
+                    else if (mob.PointOfBeingX == rock.PointOfBeingX
+                          && mob.PointOfBeingY == rock.PointOfBeingY)
+                         {
+                        rock.GetAround(mob);
+                         }
                 }
             }
         }
