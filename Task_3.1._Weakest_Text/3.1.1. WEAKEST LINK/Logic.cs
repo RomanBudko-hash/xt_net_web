@@ -23,6 +23,7 @@ namespace _3._1._1.WEAKEST_LINK
                 Console.WriteLine($"Раунд {round}. Вычеркнут человек(-и). Людей осталось: {summOfPeople}");
                 N = summOfPeople;
                 round++;
+                Console.ReadKey();
             }
             while (summOfPeople != 1);
         }
