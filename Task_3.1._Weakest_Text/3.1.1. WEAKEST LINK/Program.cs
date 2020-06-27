@@ -1,4 +1,6 @@
-﻿namespace _3._1._1.WEAKEST_LINK
+﻿using System;
+
+namespace _3._1._1.WEAKEST_LINK
 {
     public class Program
     {
@@ -6,9 +8,15 @@
         {
             Logic play = new Logic();
 
-            int x = play.PeopleCount = 20;
+            while(true)
+            {
+                Console.WriteLine("Please, enter count of people");
 
-            play.PeopleCrossOut(x);
+	            if (int.TryParse(Console.ReadLine(), out int x) && x > 0)
+	            {
+                    play.PeopleCrossOut(x);
+        	    }
+            }
         }
     }
 }
