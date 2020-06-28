@@ -14,8 +14,13 @@ namespace _3._1._1.WEAKEST_LINK
 
 	            if (int.TryParse(Console.ReadLine(), out int x) && x > 0)
 	            {
-                    play.PeopleCrossOut(x);
-        	    }
+                    Console.WriteLine("Please, enter number cross out a person");
+
+                    if (int.TryParse(Console.ReadLine(), out int y) && y > 0) 
+                    {
+                        play.PeopleCrossOut(x,y);
+                    }
+                }
             }
         }
     }
