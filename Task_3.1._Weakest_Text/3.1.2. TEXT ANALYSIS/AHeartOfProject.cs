@@ -7,17 +7,29 @@ namespace _3._1._2.TEXT_ANALYSIS
     {
         public string Titul { get; } = "Here must to be your text";
 
-        public string[] CheckPhrase(string example)
+        public string CheckPhraseOnNullOrWhiteSpace(string example)
         {
             try
             {
-                example = example.ToLower();
-            }
-            catch
-            {
-                //Exception
+                if(!string.IsNullOrWhiteSpace(example))
+                {
+                    example = example.ToLower();
+                }
+                else
+                {
+                    throw new ArgumentNullException("Entered uncorrect value");
+                }
             }
 
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return example;
+        }
+
+        public string[] DeleteCharacters(string example)
+        {
             string[] castString = example.Split('_', '-', ':', ';', '.', ',', '!', '?', ' ');
 
             return castString;
@@ -27,9 +39,9 @@ namespace _3._1._2.TEXT_ANALYSIS
         {
             Dictionary<string, int> saveResult = new Dictionary<string, int>();
 
-            for (int i = 0; i < castString.Length; i++) // Run 
+            for (int i = 0; i < castString.Length; i++) // Compare the elements of string each other
             {
-                int count = 0;
+                int countRetryWords = 0;
 
                 for (int j = i + 1; j < castString.Length; j++)
                 {
@@ -37,16 +49,33 @@ namespace _3._1._2.TEXT_ANALYSIS
                         && castString[i] != ""
                         && castString[j] != "")
                     {
-                        ++count;
+                        ++countRetryWords;
                     }
                 }
 
-                if (!saveResult.ContainsKey(castString[i]))
+                if (countRetryWords > 0 && !saveResult.ContainsKey(castString[i]))
                 {
-                    saveResult.Add(castString[i], count);
+                    saveResult.Add(castString[i], countRetryWords);
                 }
             }
+
             return saveResult;
+        }
+
+        public string ResultWriting(Dictionary<string, int> keyValues)
+        {
+            string result = "";
+
+            if (keyValues.Count > 7)
+                result = "Oh, no. It is horrible";
+            if (keyValues.Count > 4 && keyValues.Count < 7)
+                result = "The text has a lot of retrying";
+            if (keyValues.Count > 1 && keyValues.Count < 4)
+                result = "Need to be slightly modidfied this text";
+            if (keyValues.Count <= 1)
+                result = "The text is awesome";
+
+            return result;
         }
     }
 }

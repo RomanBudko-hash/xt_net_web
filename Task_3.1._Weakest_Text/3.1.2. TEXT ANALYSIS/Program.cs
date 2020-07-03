@@ -14,8 +14,11 @@ namespace _3._1._2.TEXT_ANALYSIS
 
             string example = Console.ReadLine();
 
-            Console.WriteLine(string.Join(" ", aHeart.FindRetryWords(aHeart.CheckPhrase(example))));
-            
+            var s = aHeart.FindRetryWords(aHeart.DeleteCharacters
+                (aHeart.CheckPhraseOnNullOrWhiteSpace(example)));
+
+            Console.WriteLine(string.Join(" ", s));
+            Console.WriteLine(string.Join(" ", aHeart.ResultWriting(s)));
         }
     }
 }
