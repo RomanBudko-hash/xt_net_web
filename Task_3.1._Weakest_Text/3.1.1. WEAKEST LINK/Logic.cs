@@ -4,36 +4,37 @@ namespace _3._1._1.WEAKEST_LINK
 {
     public class Logic
     {
-        public void PeopleCrossOut(int n, int number)
+        public void PeopleCrossOut(int peopleCount, int personNumber)
         {
             int round = 1;
 
-            int summOfPeople = n; // Needed to be split variable
+            int summOfPeople = peopleCount; // Needed to be split variable
 
             do
             {
-                for (int i = 1; i <= n; i++)
+                for (int i = 1; i <= peopleCount; i++)
                 {
-                    if (i % number == 0)
+                    if (i % personNumber == 0)
                     {
                         --summOfPeople;
+
+                        Console.WriteLine($"Раунд {round}. Вычеркнут человек. Людей осталось: {summOfPeople}");
+
+                        round++;
+
+                        Console.ReadKey(); // In the task writed "Poetapno" to show a result
+                    }
+
+                    if (personNumber > summOfPeople)
+                    {
+                        Console.WriteLine("Невозможно вычеркнуть человека");
+
+                        return;
                     }
                 }
-
-                if (summOfPeople == n)
-                {
-                    Console.WriteLine("Невозможно вычеркнуть человека");
-                    summOfPeople = 1;
-                }
-                else
-                {
-                    Console.WriteLine($"Раунд {round}. Вычеркнут человек(-и). Людей осталось: {summOfPeople}");
-                    n = summOfPeople;
-                    round++;
-                    Console.ReadKey(); // In the task writed "Poetapno" to show a result
-                }
             }
-            while (summOfPeople != 1);
+
+            while (summOfPeople != 1 || personNumber > summOfPeople);
         }
     }
 }
