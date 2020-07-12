@@ -10,6 +10,8 @@ namespace Dynamic_ARRAY
 
         private int length;
 
+        private int capacity;
+
         public int Length 
         { 
             get => length;
@@ -25,18 +27,18 @@ namespace Dynamic_ARRAY
 
         public int Capacity
         { 
-            get => length;
+            get => capacity;
 
             set
             {
-                if (value < length)
+                if (capacity < length)
                 {
                     throw new ArgumentOutOfRangeException();
                 }
 
-                if (value > length)
+                if (capacity > length)
                 {
-                    T[] array = new T[value];
+                    T[] array = new T[capacity];
 
                     Array.CopyTo(array, 0);
                 }
@@ -46,24 +48,31 @@ namespace Dynamic_ARRAY
         public MyArrayList() 
         {
             Array = new T[8];
+            capacity = 8;
+            length = 0;
         }
 
         public MyArrayList(int x)
         {
             Array = new T[x];
+            capacity = x;
+            length = 0;
         }
 
         public MyArrayList(IEnumerable<T> collection)
         {
-            int pieceCount = 0;
+            capacity = 0;
+
             int index = 0;
 
             foreach (var item in collection)
             {
-                pieceCount++;
+                capacity++;
             }
 
-            T [] arr = new T[pieceCount];
+            T [] arr = new T[capacity];
+
+            length = capacity;
 
             foreach (var item in collection)
             {
@@ -74,21 +83,28 @@ namespace Dynamic_ARRAY
 
         public void Add(T item)
         {
-            if (Capacity == length)
+            if (capacity == length)
             {
-                T[] arr = new T[Capacity * 2];
+                T[] arr = new T[capacity * 2];
+
                 Array.CopyTo(arr, 0);
+
+                arr[length] = item;
                 Array = arr;
+                capacity *= 2;
             }
-            Array[length] = item;
-            Length++;
+            else if(capacity > length)
+            {
+                Array[length] = item;
+            }
+            length++;
         }
 
         public void AddRange(IEnumerable<T> collection)
         {
             int countCollection = 0;
 
-            int oldLength = Length;
+            int oldLength = length;
 
             if (collection is null)
             {
@@ -100,9 +116,9 @@ namespace Dynamic_ARRAY
                 countCollection++;
             }
 
-            if (Length + countCollection > Capacity)
+            if (length + countCollection > capacity)
             {
-                T[] arr = new T[Length + countCollection + 1];
+                T[] arr = new T[length + countCollection + 1];
 
                 foreach (var item in collection)
                 {
@@ -115,32 +131,32 @@ namespace Dynamic_ARRAY
                 foreach (var item in collection)
                 {
                     Array[Length + 1] = item;
-                    Length++;
+                    length++;
                 }
             }
         }
 
         public bool Remove(int index)
         {
-            if (index >= Length || index < 0)
+            if (index >= length || index < 0)
             {
                 return false;
             }
             else
             {
-                for (int i = 0; i < Length - 1; i++)
+                for (int i = 0; i < length; i++)
                 {
-                    if (i == index && index != Length - 1)
+                    if (i == index && index != length - 1)
                     {
-                        Array[i] = Array[i+1];
+                        for (int j = i; j < length; j++)
+                        {
+                            Array[j] = Array[j + 1];
+                        }
                     }
-                    if(index == Length - 1)
+                    if(i == index && index == length - 1)
                     {
-                        Length--;
-                    }
-                    if (i > index)
-                    {
-                        Array[i] = Array[i-1];
+                        i = 0;
+                        length--;
                     }
                 }
                 return true;
@@ -149,14 +165,14 @@ namespace Dynamic_ARRAY
 
         public bool Insert(int index, T item)
         {
-            if (index > Length)
+            if (index > length)
             {
                 return false;
                 throw new ArgumentOutOfRangeException();
             }
-            if (Length == Capacity)
+            if (length == capacity)
             {
-                T[] arr = new T[Capacity + 1];
+                T[] arr = new T[capacity + 1];
 
                 for (int i = 0; i < arr.Length; i++)
                 {
@@ -185,7 +201,7 @@ namespace Dynamic_ARRAY
         {
             get
             {
-                if (index >= Length)
+                if (index >= length)
                 {
                     throw new ArgumentOutOfRangeException();
                 }
@@ -197,7 +213,7 @@ namespace Dynamic_ARRAY
 
             set
             {
-                if (index >= Length)
+                if (index >= length)
                 {
                     throw new ArgumentOutOfRangeException();
                 }
