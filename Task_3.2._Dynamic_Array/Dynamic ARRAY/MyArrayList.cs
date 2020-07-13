@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Dynamic_ARRAY
 {
-    public class MyArrayList<T> //: IEnumerable, IEnumerable<T>
+    public class MyArrayList<T> : IEnumerable, IEnumerable<T>
     {
         public T[] Array { get; set; }
 
@@ -36,7 +36,7 @@ namespace Dynamic_ARRAY
                     throw new ArgumentOutOfRangeException();
                 }
 
-                if (capacity > length)
+                if (capacity > length && Length != 0)
                 {
                     T[] array = new T[capacity];
 
@@ -90,7 +90,9 @@ namespace Dynamic_ARRAY
                 Array.CopyTo(arr, 0);
 
                 arr[length] = item;
+
                 Array = arr;
+
                 capacity *= 2;
             }
             else if(capacity > length)
@@ -172,7 +174,7 @@ namespace Dynamic_ARRAY
             }
             if (length == capacity)
             {
-                T[] arr = new T[capacity + 1];
+                T[] arr = new T[capacity * 2];
 
                 for (int i = 0; i < arr.Length; i++)
                 {
@@ -189,13 +191,15 @@ namespace Dynamic_ARRAY
             return true;
         }
 
-        //public IEnumerator GetEnumerator()
-        //{
-        //}
+        public virtual IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < Length; i++)
+            {
+                yield return Array[i];
+            }
+        }
 
-        //IEnumerator<T> IEnumerable<T>.GetEnumerator()
-        //{
-        //}
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         public T this[int index]
         {
