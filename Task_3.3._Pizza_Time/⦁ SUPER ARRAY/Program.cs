@@ -9,13 +9,13 @@ namespace __SUPER_ARRAY
         {
             int [] NumbersArray = { 1, 2, 3, 12, 4, 5, 1 };
 
-            NumbersArray.ForeachItem( a => a * 3);
+            Console.WriteLine("Сумма всех элементов = " + NumbersArray.SumOfItem() + "\n");
 
-            Console.WriteLine(NumbersArray.SumOfItem() + "\n");
+            Console.WriteLine("Среднее = " + NumbersArray.AverageOfItem() + "\n");
 
-            Console.WriteLine(NumbersArray.AverageOfItem() + "\n");
+            Console.WriteLine("Часто повторяющееся значение = " + NumbersArray.OftenRetry() + "\n");
 
-            Console.WriteLine(NumbersArray.OftenRetry() + "\n");
+            NumbersArray.ForeachItem(a => a * 3);
 
             foreach (var item in NumbersArray)
             {
@@ -64,9 +64,16 @@ namespace __SUPER_ARRAY
             }
         } 
 
-        public static int OftenRetry(this int[] array)
+        public static T OftenRetry<T>(this T[] array)
         {
-            return 0;
+            if (array is null || array.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+            else
+            {
+                return array.GroupBy(item => item).OrderBy(elem => elem.Count()).Last().Key;
+            }
         }
     }
 }
