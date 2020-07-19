@@ -8,7 +8,7 @@ namespace __PIZZA_TIME
 
         public override void FinishedCookingPizza()
         {
-            Console.WriteLine("Маргарита приготовлена");
+            Console.WriteLine("Маргарита готовится");
         }
     }
 }

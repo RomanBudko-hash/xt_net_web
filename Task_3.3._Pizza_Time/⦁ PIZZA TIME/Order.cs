@@ -6,7 +6,7 @@ namespace __PIZZA_TIME
     {
         public Order(string ClientName)
         {
-            Console.WriteLine(ClientName + ", Ваша пицца готовится");
+            Console.WriteLine(ClientName + ", мы уже выращиваем продукты для Вашей пиццы, ожидайте");
         }
 
         public event EventHandler<int> PizzaIsCooked;
