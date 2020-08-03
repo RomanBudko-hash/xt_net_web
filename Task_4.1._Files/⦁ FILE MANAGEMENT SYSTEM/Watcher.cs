@@ -38,7 +38,7 @@ namespace __FILE_MANAGEMENT_SYSTEM
 
         private void OnDeleted(object sender, FileSystemEventArgs e)
         {
-            Console.WriteLine("Name: " + e.Name + " act: " + e.ChangeType + " sourse " + e.FullPath);
+            Console.WriteLine("Name: " + e.Name + " act: " + e.ChangeType + " sourse was " + e.FullPath);
         }
     }
 }

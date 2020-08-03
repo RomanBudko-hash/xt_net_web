@@ -36,14 +36,20 @@ namespace __FILE_MANAGEMENT_SYSTEM
 
         private static void Backuping()
         {
-
+            Console.WriteLine(GetBackupTime());
         }
 
         private static DateTime GetBackupTime()
         {
-            Console.WriteLine("Type a year, a month, a day, a hour, a minute separated by space");
+            double hour, minute;
+
+            Console.WriteLine("Type a year, a month, a day separated by space");
 
             DateTime restorationDate = DateTime.Parse(Console.ReadLine());
+
+            Console.WriteLine("Now write please hour, which will be main for backup");
+
+            restorationDate = restorationDate.AddHours(double.Parse(Console.ReadLine()));
 
             return restorationDate;
         }
