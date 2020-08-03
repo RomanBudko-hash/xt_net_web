@@ -9,33 +9,36 @@ namespace __FILE_MANAGEMENT_SYSTEM
         {
             string pathFileMonitoring = @"C:\Users\irina.iroman\source\repos\RomanBudko-hash\xt_net_web\Task_4.1._Files\AllFilesForTask";
 
-            FileSystemWatcher watcher = new FileSystemWatcher (pathFileMonitoring, "*txt");
+            FileSystemWatcher watcher = new FileSystemWatcher(pathFileMonitoring, "*txt");
 
             watcher.IncludeSubdirectories = true;
+            watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.LastAccess;
 
-            watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName;
-            
-            watcher.Changed += Watcher_Changed;
-            watcher.Created += Watcher_Created;
-            watcher.Deleted += Watcher_Deleted;
+            watcher.Changed += new FileSystemEventHandler(OnChanged);
+            watcher.Created += new FileSystemEventHandler(OnChanged);
+            watcher.Deleted += new FileSystemEventHandler(OnDeleted);
+            watcher.Renamed += new RenamedEventHandler(OnRenamed);
+
+            watcher.EnableRaisingEvents = true;
+
+            Console.WriteLine("Press l for exit");
+
+            while (Console.ReadLine() != "l");
         }
 
-        private void Watcher_Changed(object sender, FileSystemEventArgs e)
+        private void OnChanged(object sender, FileSystemEventArgs e)
         {
-            using (var writeLogs = new StreamWriter("Logs.txt", true))
-            {
-                writeLogs.WriteLine("Имя: "+ e.Name + " действие: " + e.ChangeType + " путь до файла " + e.FullPath);
-            }
+            Console.WriteLine("Name: " + e.Name + " act: " + e.ChangeType + " sourse " + e.FullPath);
         }
 
-        private void Watcher_Created(object sender, FileSystemEventArgs e)
+        private void OnRenamed(object sender, FileSystemEventArgs e)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Name: " + e.Name + " act: " + e.ChangeType + " sourse " + e.FullPath);
         }
 
-        private void Watcher_Deleted(object sender, FileSystemEventArgs e)
+        private void OnDeleted(object sender, FileSystemEventArgs e)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Name: " + e.Name + " act: " + e.ChangeType + " sourse " + e.FullPath);
         }
     }
 }
