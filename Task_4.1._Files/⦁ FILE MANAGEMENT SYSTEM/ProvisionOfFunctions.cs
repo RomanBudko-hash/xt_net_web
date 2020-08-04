@@ -45,11 +45,18 @@ namespace __FILE_MANAGEMENT_SYSTEM
 
             Console.WriteLine("Type a year, a month, a day separated by space");
 
-            DateTime restorationDate = DateTime.Parse(Console.ReadLine());
+            DateTime restorationDate;
 
-            Console.WriteLine("Now write please hour, which will be main for backup");
+            if (DateTime.TryParse(Console.ReadLine(), out restorationDate))
+            {
+                Console.WriteLine("Now write please a hour, which will be main for backup");
 
-            restorationDate = restorationDate.AddHours(double.Parse(Console.ReadLine()));
+                restorationDate = restorationDate.AddHours(double.Parse(Console.ReadLine()));
+
+                Console.WriteLine("Now write please a minute, which will be main for backup");
+
+                restorationDate = restorationDate.AddMinutes(double.Parse(Console.ReadLine()));
+            }
 
             return restorationDate;
         }

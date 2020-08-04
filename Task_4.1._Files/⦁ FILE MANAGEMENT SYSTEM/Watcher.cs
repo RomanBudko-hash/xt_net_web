@@ -5,6 +5,8 @@ namespace __FILE_MANAGEMENT_SYSTEM
 {
     internal class Watcher
     {
+        static int Count = 0;
+
         internal void BeginOfStartWatcher()
         {
             string pathFileMonitoring = @"C:\Users\irina.iroman\source\repos\RomanBudko-hash\xt_net_web\Task_4.1._Files\AllFilesForTask";
@@ -22,18 +24,22 @@ namespace __FILE_MANAGEMENT_SYSTEM
             watcher.EnableRaisingEvents = true;
 
             Console.WriteLine("Press l for exit");
-
+            Count++;
             while (Console.ReadLine() != "l");
         }
 
-        private void OnChanged(object sender, FileSystemEventArgs e)
+        private static void OnChanged(object sender, FileSystemEventArgs e)
         {
             Console.WriteLine("Name: " + e.Name + " act: " + e.ChangeType + " sourse " + e.FullPath);
+
+            File.Copy(e.Name, e.Name + Count, false);
         }
 
         private void OnRenamed(object sender, FileSystemEventArgs e)
         {
             Console.WriteLine("Name: " + e.Name + " act: " + e.ChangeType + " sourse " + e.FullPath);
+
+            File.Create(@"C:\Users\irina.iroman\source\repos\RomanBudko - hash\xt_net_web\Task_4.1._Files\AllFilesForTask\HistoryOfChange");
         }
 
         private void OnDeleted(object sender, FileSystemEventArgs e)
