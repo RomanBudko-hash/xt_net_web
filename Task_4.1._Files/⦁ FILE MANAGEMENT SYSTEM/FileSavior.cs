@@ -5,21 +5,17 @@ namespace __FILE_MANAGEMENT_SYSTEM
 {
     internal static class FileSavior
     {
-        internal static void SaveFiles(string [] files, string currentPath, string backupDir)
+        internal static void SaveFiles(string nameOfFile, string currentPath, string backupDir)
         {
-            foreach (string file in files)
+            try
             {
-                string fName = file.Substring(currentPath.Length + 1);
+                string sourceFileName = Path.Combine(currentPath, nameOfFile);
+                File.Copy(sourceFileName, Path.Combine(backupDir, nameOfFile), true);
+            }
 
-                try
-                {
-                    File.Copy(Path.Combine(currentPath, fName), Path.Combine(backupDir, fName), true);
-                }
-
-                catch (IOException copyError)
-                {
-                    Console.WriteLine(copyError.Message);
-                }
+            catch (IOException copyError)
+            {
+                Console.WriteLine(copyError.Message);
             }
         }
     }
