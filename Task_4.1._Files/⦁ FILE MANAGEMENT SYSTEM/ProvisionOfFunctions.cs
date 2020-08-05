@@ -39,25 +39,25 @@ namespace __FILE_MANAGEMENT_SYSTEM
             //FileSavior.SaveFiles();
         }
 
-        private static DateTime GetBackupTime()
-        {
-            Console.WriteLine("Enter a year, a month, a day separated by space");
+        //private static DateTime GetBackupTime()
+        //{
+        //    Console.WriteLine("Enter a year, a month, a day separated by space");
 
-            DateTime restorationDate;
+        //    DateTime restorationDate;
 
-            if (DateTime.TryParse(Console.ReadLine(), out restorationDate))
-            {
-                Console.WriteLine("Now write please a hour, which will be main for backup");
+        //    if (DateTime.TryParse(Console.ReadLine(), out restorationDate))
+        //    {
+        //        Console.WriteLine("Now write please a hour, which will be main for backup");
 
-                restorationDate = restorationDate.AddHours(double.Parse(Console.ReadLine()));
+        //        restorationDate = restorationDate.AddHours(double.Parse(Console.ReadLine()));
 
-                Console.WriteLine("Now write please a minute, which will be main for backup");
+        //        Console.WriteLine("Now write please a minute, which will be main for backup");
 
-                restorationDate = restorationDate.AddMinutes(double.Parse(Console.ReadLine()));
-            }
+        //        restorationDate = restorationDate.AddMinutes(double.Parse(Console.ReadLine()));
+        //    }
 
-            return restorationDate;
-        }
+        //    return restorationDate;
+        //}
 
         private static void Monitoring()
         {
