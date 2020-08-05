@@ -53,7 +53,7 @@ namespace __FILE_MANAGEMENT_SYSTEM
         {
             Console.WriteLine("Name: " + e.Name + " act: " + e.ChangeType + " sourse " + e.FullPath);
 
-            FileSavior.SaveFiles(PathFileMonitoring, PathBackupFiles);
+            FileSavior.SaveFiles(e.Name, PathFileMonitoring, PathBackupFiles);
         }
     }
 }
