@@ -46,7 +46,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvisionOfFunctions.cs" />
-    <Compile Include="SaveFiles.cs" />
+    <Compile Include="FileSavior.cs" />
     <Compile Include="Watcher.cs" />
   </ItemGroup>
   <ItemGroup>

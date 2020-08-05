@@ -36,14 +36,12 @@ namespace __FILE_MANAGEMENT_SYSTEM
 
         private static void Backuping()
         {
-            Console.WriteLine(GetBackupTime());
+            //FileSavior.SaveFiles();
         }
 
         private static DateTime GetBackupTime()
         {
-            double hour, minute;
-
-            Console.WriteLine("Type a year, a month, a day separated by space");
+            Console.WriteLine("Enter a year, a month, a day separated by space");
 
             DateTime restorationDate;
 
