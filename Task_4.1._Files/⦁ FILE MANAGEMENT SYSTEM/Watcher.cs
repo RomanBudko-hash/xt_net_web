@@ -13,13 +13,13 @@ namespace __FILE_MANAGEMENT_SYSTEM
         {
             FileSystemWatcher watcher = new FileSystemWatcher(PathFileMonitoring, "*txt");
 
-            watcher.IncludeSubdirectories = true;
+            watcher.IncludeSubdirectories = false;
             watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.LastAccess;
 
             watcher.Changed += new FileSystemEventHandler(OnChanged);
-            watcher.Created += new FileSystemEventHandler(OnCreated);
+            watcher.Created += new FileSystemEventHandler(OnChanged);
             watcher.Deleted += new FileSystemEventHandler(OnDeleted);
-            watcher.Renamed += new RenamedEventHandler(OnRenamed);
+            watcher.Renamed += new RenamedEventHandler(OnChanged);
 
             watcher.EnableRaisingEvents = true;
 
@@ -35,25 +35,9 @@ namespace __FILE_MANAGEMENT_SYSTEM
             FileSavior.SaveFiles(e.Name, PathFileMonitoring, PathBackupFiles);
         }
 
-        private static void OnCreated(object sender, FileSystemEventArgs e)
-        {
-            Console.WriteLine("Name: " + e.Name + " act: " + e.ChangeType + " sourse " + e.FullPath);
-
-            FileSavior.SaveFiles(e.Name, PathFileMonitoring, PathBackupFiles);
-        }
-
         private void OnDeleted(object sender, FileSystemEventArgs e)
         {
             Console.WriteLine("Name: " + e.Name + " act: " + e.ChangeType + " sourse was " + e.FullPath);
-
-            FileSavior.SaveFiles(e.Name, PathFileMonitoring, PathBackupFiles);
-        }
-
-        private void OnRenamed(object sender, FileSystemEventArgs e)
-        {
-            Console.WriteLine("Name: " + e.Name + " act: " + e.ChangeType + " sourse " + e.FullPath);
-
-            FileSavior.SaveFiles(e.Name, PathFileMonitoring, PathBackupFiles);
         }
     }
 }

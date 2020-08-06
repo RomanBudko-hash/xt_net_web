@@ -10,7 +10,7 @@ namespace __FILE_MANAGEMENT_SYSTEM
             try
             {
                 string sourceFileName = Path.Combine(currentPath, nameOfFile);
-                File.Copy(sourceFileName, Path.Combine(backupDir, nameOfFile), true);
+                File.Copy(sourceFileName, Path.Combine(backupDir, nameOfFile), false);
             }
 
             catch (IOException copyError)
