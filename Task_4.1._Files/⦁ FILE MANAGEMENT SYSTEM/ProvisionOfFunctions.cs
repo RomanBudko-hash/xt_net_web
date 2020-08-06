@@ -36,32 +36,13 @@ namespace __FILE_MANAGEMENT_SYSTEM
 
         private static void Backuping()
         {
-            //FileSavior.SaveFiles();
+            BackUpFiles backUp = new BackUpFiles();
+            backUp.DeleteAllFiles();
         }
-
-        //private static DateTime GetBackupTime()
-        //{
-        //    Console.WriteLine("Enter a year, a month, a day separated by space");
-
-        //    DateTime restorationDate;
-
-        //    if (DateTime.TryParse(Console.ReadLine(), out restorationDate))
-        //    {
-        //        Console.WriteLine("Now write please a hour, which will be main for backup");
-
-        //        restorationDate = restorationDate.AddHours(double.Parse(Console.ReadLine()));
-
-        //        Console.WriteLine("Now write please a minute, which will be main for backup");
-
-        //        restorationDate = restorationDate.AddMinutes(double.Parse(Console.ReadLine()));
-        //    }
-
-        //    return restorationDate;
-        //}
 
         private static void Monitoring()
         {
-            Watcher watcher = new Watcher(); 
+            Watcher watcher = new Watcher();
             watcher.BeginOfStartWatcher();
         }
     }

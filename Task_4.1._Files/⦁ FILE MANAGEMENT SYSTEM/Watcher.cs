@@ -5,9 +5,9 @@ namespace __FILE_MANAGEMENT_SYSTEM
 {
     internal class Watcher
     {
-        private static string PathFileMonitoring = @"C:\Users\irina.iroman\source\repos\RomanBudko-hash\xt_net_web\Task_4.1._Files\AllFilesForTask";
+        public static string PathFileMonitoring = @"C:\Users\irina.iroman\source\repos\RomanBudko-hash\xt_net_web\Task_4.1._Files\AllFilesForTask";
 
-        private static string PathBackupFiles = @"C:\Users\irina.iroman\source\repos\RomanBudko-hash\xt_net_web\Task_4.1._Files\AllFilesForTask\HistoryOfChange";
+        public static string PathBackupFiles = @"C:\Users\irina.iroman\source\repos\RomanBudko-hash\xt_net_web\Task_4.1._Files\AllFilesForTask\HistoryOfChange";
         #region SetsOfWatcher
         internal void BeginOfStartWatcher()
         {
