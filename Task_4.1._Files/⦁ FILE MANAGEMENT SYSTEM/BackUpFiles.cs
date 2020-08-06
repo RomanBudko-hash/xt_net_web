@@ -39,11 +39,21 @@ namespace __FILE_MANAGEMENT_SYSTEM
 
         private void RecoveryNeedFiles() // Надо доделать, но хз получится у меня за пол часа 
         {
-            foreach (var file in Directory.GetFiles(Watcher.PathBackupFiles))
+            DateTime recoveryDate = GetBackupTime();
+
+            string oldSource = Watcher.PathBackupFiles;
+
+            string newSource = Watcher.PathFileMonitoring;
+
+            foreach (var file in Directory.GetFiles(oldSource))
             {
-                if (File.GetCreationTime(Path.Combine(Watcher.PathBackupFiles + file.ToString())) == GetBackupTime())
+                if (File.GetCreationTime(Path.Combine(oldSource, file.ToString())) == recoveryDate)
                 {
-                    //Directory.Move(Watcher.PathBackupFiles, Watcher.PathFileMonitoring);
+                    Directory.Move(oldSource, newSource);
+                }
+                else
+                {
+                    Console.WriteLine("There is have not files from this date");
                 }
             }
         }
