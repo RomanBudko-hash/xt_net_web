@@ -37,7 +37,7 @@ namespace __FILE_MANAGEMENT_SYSTEM
             RecoveryNeedFiles();
         }
 
-        private void RecoveryNeedFiles()
+        private void RecoveryNeedFiles() // Надо доделать, но хз получится у меня за пол часа 
         {
             foreach (var file in Directory.GetFiles(Watcher.PathBackupFiles))
             {
